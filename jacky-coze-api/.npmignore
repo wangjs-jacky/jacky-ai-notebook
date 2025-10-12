@@ -1,0 +1,41 @@
+# 源文件中的示例（已编译到 dist）
+src/examples/
+
+# 开发配置文件
+tsconfig.json
+tsconfig.esm.json
+.gitignore
+.npmignore
+
+# 开发依赖相关
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS 文件
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# 测试和覆盖率
+coverage/
+*.lcov
+.nyc_output
+
+# 文档草稿
+docs/
+
+# 其他
+tmp/
+temp/
+*.log
+

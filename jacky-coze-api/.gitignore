@@ -1,0 +1,80 @@
+# 依赖
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编译输出
+dist/
+build/
+*.tsbuildinfo
+
+# 环境变量文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 日志文件
+logs/
+*.log
+
+# 运行时数据
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# 覆盖率目录
+coverage/
+*.lcov
+
+# nyc 测试覆盖率
+.nyc_output
+
+# 依赖目录
+node_modules/
+jspm_packages/
+
+# TypeScript 缓存
+*.tsbuildinfo
+
+# 可选的 npm 缓存目录
+.npm
+
+# 可选的 eslint 缓存
+.eslintcache
+
+# 微服务包管理器
+.pnp
+.pnp.js
+
+# 临时文件夹
+tmp/
+temp/
+
+# 编辑器目录和文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS 生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 示例运行文件（包含 API key）
+src/examples/**/*.js
+src/examples/**/*.d.ts
+src/examples/**/*.js.map
+
+# 测试文件
+test-import.js
+test-import.mjs
