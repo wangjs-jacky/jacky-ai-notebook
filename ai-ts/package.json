@@ -1,0 +1,27 @@
+{
+  "name": "ai",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx src/deepseek-chat.ts",
+    "dev:coze": "tsx src/coze-chat.ts",
+    "dev:deepseek": "tsx src/deepseek-chat.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@coze/api": "^1.3.7",
+    "dotenv": "^17.2.3",
+    "jacky-coze-api": "^1.0.0",
+    "openai": "^6.3.0"
+  }
+}
