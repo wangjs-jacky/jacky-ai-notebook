@@ -52,12 +52,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/jacky-coze-api.git"
+    "url": "https://github.com/wangjs-jacky/jacky-ai-notebook/tree/main/jacky-coze-api"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/jacky-coze-api/issues"
+    "url": "https://github.com/wangjs-jacky/jacky-ai-notebook/issues"
   },
-  "homepage": "https://github.com/yourusername/jacky-coze-api#readme",
+  "homepage": "https://github.com/wangjs-jacky/jacky-ai-notebook/blob/main/jacky-coze-api/README.zh.md",
   "peerDependencies": {
     "@coze/api": "^1.3.0"
   },

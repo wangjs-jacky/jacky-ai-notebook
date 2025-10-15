@@ -1,5 +1,4 @@
 import { createCozeAgent } from '../index';
-import type { LifecycleEvents, ChatResult } from '../interface';
 
 // ==================== 使用示例 ====================
 
@@ -9,7 +8,7 @@ async function basicExample() {
 
   const agent = createCozeAgent({
     COZE_API_KEY: "pat_HzR7Vt18ltFZKashdi8VaCPXhM7LhkMr4lsaTrLp0IJvSkO3hQxwn91ASzWn7kB8",
-    COZE_BOT_ID: "7503922688172752933",
+    COZE_BOT_ID: "7560248215090675752",
     debug: false,
   });
 
@@ -31,7 +30,7 @@ async function lifecycleExample() {
 
   const agent = createCozeAgent({
     COZE_API_KEY: "pat_HzR7Vt18ltFZKashdi8VaCPXhM7LhkMr4lsaTrLp0IJvSkO3hQxwn91ASzWn7kB8",
-    COZE_BOT_ID: "7503922688172752933",
+    COZE_BOT_ID: "7560248215090675752",
     debug: false,
   });
 
@@ -98,7 +97,7 @@ async function resetExample() {
 
   const agent = createCozeAgent({
     COZE_API_KEY: "pat_HzR7Vt18ltFZKashdi8VaCPXhM7LhkMr4lsaTrLp0IJvSkO3hQxwn91ASzWn7kB8",
-    COZE_BOT_ID: "7503922688172752933",
+    COZE_BOT_ID: "7560248215090675752",
     debug: false,
   });
 
@@ -119,7 +118,7 @@ async function errorHandlingExample() {
 
   const agent = createCozeAgent({
     COZE_API_KEY: "invalid_key", // 故意使用无效的API密钥
-    COZE_BOT_ID: "7503922688172752933",
+    COZE_BOT_ID: "7560248215090675752",
     debug: false,
   });
 
@@ -140,7 +139,7 @@ async function customConfigExample() {
 
   const agent = createCozeAgent({
     COZE_API_KEY: "pat_HzR7Vt18ltFZKashdi8VaCPXhM7LhkMr4lsaTrLp0IJvSkO3hQxwn91ASzWn7kB8",
-    COZE_BOT_ID: "7503922688172752933",
+    COZE_BOT_ID: "7560248215090675752",
     debug: true, // 启用调试模式
     autoSaveHistory: true, // 自动保存历史
     baseURL: "https://api.coze.cn" // 自定义API地址
