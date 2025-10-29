@@ -7,6 +7,8 @@ export interface LarkOAuthConfig {
   appId: string;
   appSecret: string;
   redirectUri: string;
+  port?: number;
+  timeout?: number; // 监听 callback 最长的超时时间
 }
 
 // 授权码响应

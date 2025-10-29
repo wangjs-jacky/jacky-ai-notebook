@@ -1,0 +1,372 @@
+---
+alwaysApply: false
+description: "Node.js 项目结构分析与最佳实践"
+globs: 
+---
+# Node.js 项目结构分析与最佳实践
+
+## 一、当前项目结构分析
+
+### 1. 目录组织结构
+
+```
+project-root/
+├── src/                      # 源代码目录
+│   ├── [feature]/           # 按功能模块划分
+│   │   ├── index.ts        # 统一导出入口
+│   │   ├── [sub-module]/   # 子模块
+│   │   │   ├── index.ts
+│   │   │   └── *.ts
+│   │   ├── types.ts        # 类型定义
+│   │   ├── utils/          # 工具函数
+│   │   │   └── *.ts
+│   │   └── *.ts            # 核心业务逻辑
+│   └── utils/              # 全局工具函数
+│       └── *.ts
+├── tests/                   # 测试代码（镜像 src 结构）
+│ searches  ├── [feature]/
+│   └── utils/
+├── docs/                    # 文档目录
+├── assets/                  # 静态资源
+├── dist/                    # 编译输出（git忽略）
+├── coverage/                # 测试覆盖率（git忽略）
+├── package.json            # 项目配置
+├── tsconfig.json           # TypeScript 配置
+├── jest.config.js          # Jest 配置
+├── .gitignore
+└── README.md
+```
+
+### 2. 核心设计原则
+
+#### A. 模块化设计
+- **按功能领域划分模块**：每个顶级模块对应一个业务领域（如 auth, cli, mcp-server）
+- **单一职责原则**：每个模块只负责一个明确的职责
+- **高内聚低耦合**：模块内部紧密相关，模块间依赖最小化
+
+#### B. 清晰的目录命名
+- `handler/` - 处理器/处理器实现
+- `provider/` - 提供者/适配器模式实现
+- `utils/` - 工具函数集合
+- `types.ts` - TypeScript 类型定义
+- `index.ts` - 模块统一导出
+
+#### C. 统一导出模式
+每个模块使用 `index.ts` 统一导出，提供清晰的公共接口：
+
+```typescript
+// src/auth/index.ts
+export * from './provider';
+export * from './store';
+export * from './handler';
+export * from './utils';
+```
+
+#### D. 配置文件组织
+- 类型定义集中管理：`types.ts` 文件
+- 配置信息统一管理：`config.ts` 文件
+- 常量定义集中管理：`constants.ts` 文件
+
+### 3. 测试结构
+
+测试目录**镜像源代码结构**，便于定位和维护：
+
+```
+src/auth/handler/handler.ts  →  tests/auth/handler/handler.test.ts
+src/utils/logger.ts          →  tests/utils/logger.test.ts
+```
+
+### 4. 工具函数组织
+
+#### 全局工具函数（src/utils/）
+- 适用于整个项目的通用函数
+- 如：logger, http-instance, version 等
+
+#### 模块工具函数（src/[feature]/utils/）
+- 仅适用于特定模块的函数
+- 如：auth/utils/encryption.ts
+
+### 5. TypeScript 配置
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "CommonJS",
+    "declaration": true,           // 生成 .d.ts
+    "outDir": "./dist",
+    "strict": true,                // 严格模式
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
+### 6. 包配置最佳实践
+
+```json
+{
+  "main": "dist/index.js",           // 入口文件
+  "types": "dist/index.d.ts",        // 类型定义
+  "files": ["dist", "docs", "README.md"], // 发布文件
+  "scripts": {
+    "build": "rm -rf dist && tsc",   // 清理后编译
+    "dev": "ts-node src/index.ts",   // 开发模式
+    "test": "jest",                   // 测试
+    "test:watch": "jest --watch",    // 监听测试
+    "test:coverage": "jest --coverage" // 覆盖率
+  }
+}
+```
+
+## 二、通用 Node.js 项目结构设计
+
+### 推荐的通用结构
+
+```
+[project-name]/
+├── src/                          # 源代码目录
+│   ├── [feature-1]/             # 功能模块 1
+│   │   ├── index.ts             # 模块导出
+│   │   ├── types.ts             # 类型定义
+│   │   ├── [sub-module]/        # 子模块
+│   │   │   ├── index.ts
+│   │   │   └── *.ts
+│   │   ├── utils/               # 模块工具
+│   │   └── *.ts                 # 核心逻辑
+│   │
+│   ├── [feature-2]/             # 功能模块 2
+│   │   └── ...
+│   │
+│   ├── core/                    # 核心功能
+│   │   ├── index.ts
+│   │   └── *.ts
+│   │
+│   ├── config/                  # 配置管理
+│   │   ├── index.ts
+│   │   └── *.ts
+│   │
+│   ├── utils/                   # 全局工具
+│   │   ├── index.ts
+│   │   ├── logger.ts
+│   │   ├── validator.ts
+│   │   └── *.ts
+│   │
+│   ├── types/                   # 全局类型
+│   │   └── index.ts
+│   │
+│   └── index.ts                 # 主入口
+│
+├── tests/                       # 测试代码（镜像 src）
+│   ├── [feature-1]/
+│   ├── [feature-2]/
+│   ├── core/
+│   ├── utils/
+│   └── setup.ts
+│
+├── docs/                        # 文档
+│   ├── api/                     # API 文档
+│   ├── guides/                  # 指南
+│   └── examples/                # 示例
+│
+├── scripts/                     # 构建脚本
+│   ├── build.sh
+│   └── deploy.sh
+│
+├── .github/                     # GitHub 配置
+│   ├── workflows/               # CI/CD
+│   └── ISSUE_TEMPLATE/
+│
+├── .vscode/                     # VSCode 配置（可选）
+├── assets/                      # 静态资源
+│
+├── package.json                 # 项目配置
+├── tsconfig.json               # TypeScript 配置
+├── jest.config.js              # Jest 配置
+├── .gitignore                  # Git 忽略
+├── .prettierrc                 # Prettier 配置
+├── .eslintrc.js                # ESLint 配置
+└── README.md                    # 说明文档
+```
+
+### 模块组织原则
+
+#### 1. **按业务功能划分**
+不要按技术层次（如 controllers, services, repositories）划分，而是按业务领域划分。
+
+**❌ 不好的做法：**
+```
+src/
+├── controllers/
+├── services/
+├── repositories/
+└── models/
+```
+
+**✅ 好的做法：**
+```
+src/
+├── user/
+│   ├── types.ts
+│   ├── handler.ts      # controller
+│   ├── service.ts      # business logic
+│   └── repository.ts   # data access
+├── order/
+└── payment/
+```
+
+#### 2. **保持扁平层次**
+避免过深的嵌套，一般不超过 3 层。
+
+```
+✅ 好的结构：
+src/feature/sub-module/file.ts
+
+❌ 过深的嵌套：
+src/feature/sub-module/another/deep/file.ts
+```
+
+#### 3. **统一的文件命名**
+- 文件：camelCase.ts 或 kebab-case.ts
+- 类型：types.ts 或 *-types.ts
+- 测试：*.test.ts
+- 工具：utils/ 目录
+
+#### 4. **清晰的依赖关系**
+```
+高层次的模块可以依赖低层次的模块，反之不行。
+
+src/
+├── core/           # 最底层，不依赖任何其他模块
+├── utils/          # 底层，只依赖 core
+├── feature-a/      # 高层，可以依赖 utils、core
+└── feature-b/      # 高层，可以依赖 feature-a、utils、core
+```
+
+## 三、关键配置文件
+
+### 1. tsconfig.json
+```json
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "CommonJS",
+    "lib": ["ES2018"],
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "tests"]
+}
+```
+
+### 2. package.json
+```json
+{
+  "name": "@scope/package-name",
+  "version": "1.0.0",
+  "description": "Package description",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "build:watch": "tsc --watch",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+```
+
+### 3. jest.config.js
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  testMatch: ['**/tests/**/*.test.ts'],
+  collectCoverageFrom: [
+    'src/**/*.ts',
+    '!src/**/*.d.ts',
+    '!src/**/index.ts',
+  ],
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov', 'html'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+  setupFilesAfterEnv: ['./tests/setup.ts'],
+};
+```
+
+### 4. .gitignore
+```
+node_modules/
+dist/
+coverage/
+*.log
+.env
+.env.local
+.DS_Store
+```
+
+## 四、开发最佳实践
+
+### 1. 代码组织
+- ✅ 每个模块独立，通过 index.ts 导出
+- ✅ 类型定义集中管理
+- ✅ 工具函数分类管理（全局 vs 模块级）
+- ✅ 使用命名空间避免命名冲突
+
+### 2. 测试策略
+- ✅ 测试文件与源文件一一对应
+- ✅ 测试目录镜像源代码结构
+- ✅ 测试覆盖核心业务逻辑
+- ✅ 使用 setup.ts 统一测试配置
+
+### 3. 类型安全
+- ✅ 启用 TypeScript strict 模式
+- ✅ 为所有公共 API 定义类型
+- ✅ 使用泛型提高代码复用性
+
+### 4. 文档规范
+- ✅ 每个模块有清晰的 README
+- ✅ 公共 API 有 JSDoc 注释
+- ✅ 提供使用示例
+- ✅ 维护 CHANGELOG
+
+## 五、对比其他常见结构
+
+### 对比 MVC 结构
+传统 MVC 按技术层次划分，现代项目更适合按业务领域划分。
+
+### 对比 Monorepo 结构
+单个项目使用当前结构，Monorepo 适合使用 packages/ 目录。
+
+### 对比框架脚手架结构
+框架脚手架通常带特定约定，通用库建议使用更灵活的结构。
+
+

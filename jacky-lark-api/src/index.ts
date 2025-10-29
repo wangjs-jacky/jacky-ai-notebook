@@ -4,13 +4,13 @@
  */
 
 // 导出类型定义
-export * from './types.js';
+export * from './types/index.js';
 
-// 导出 OAuth 助手
-export { LarkOAuthHelper } from './oauth.js';
+// 导出核心模块
+export * from './core/index.js';
 
-// 导出 API 客户端
-export { LarkApiClient } from './client.js';
+// 导出配置管理模块
+export * from './config.js';
 
-// 默认导出
-export { LarkApiClient as default } from './client.js';
+// 默认导出客户端
+export { LarkApiClient as default } from './core/client.js';

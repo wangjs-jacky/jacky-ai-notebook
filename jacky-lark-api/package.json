@@ -19,7 +19,7 @@
     "build": "tsc",
     "dev": "tsc && node dist/index.js",
     "start": "node dist/index.js",
-    "example": "npm run build && node example.js"
+    "example": "npm run build && node dist/examples/index.js"
   },
   "keywords": [
     "lark",
@@ -30,7 +30,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "@types/express": "^5.0.4",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2",
+    "open": "^10.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
