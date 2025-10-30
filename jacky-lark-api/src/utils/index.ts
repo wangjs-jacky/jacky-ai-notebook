@@ -5,9 +5,11 @@
 export {
   LarkResourceType,
   type TokenResult,
+  type TokenWithType,
   extractTokenFromUrl,
   extractTokensFromUrls,
   getTokenOnly,
+  getTokenString,
   isValidLarkUrl
 } from './token-extractor.js';
 

@@ -4,6 +4,8 @@
  * 提供从飞书资源 URL 中提取 token 的核心功能
  */
 
+import type { ObjType } from '../core/types/api-types.js';
+
 /**
  * 飞书资源类型枚举
  */
@@ -29,6 +31,16 @@ export interface TokenResult {
   type: LarkResourceType;
   /** 原始 URL */
   originalUrl: string;
+}
+
+/**
+ * Token 和对象类型提取结果
+ */
+export interface TokenWithType {
+  /** token 值 */
+  token: string;
+  /** 对象类型（用于 API 调用） */
+  objType: ObjType | null;
 }
 
 /**
@@ -152,18 +164,80 @@ export function extractTokensFromUrls(urls: string[]): TokenResult[] {
 }
 
 /**
+ * 将 LarkResourceType 转换为 ObjType
+ * 
+ * @param resourceType LarkResourceType 枚举值
+ * @returns ObjType 或 null（如果无法映射）
+ */
+function mapResourceTypeToObjType(resourceType: LarkResourceType): ObjType | null {
+  const typeMap: Record<LarkResourceType, ObjType | null> = {
+    [LarkResourceType.DOC]: 'doc',
+    [LarkResourceType.DOCUMENT]: 'docx',
+    [LarkResourceType.SPREADSHEET]: 'sheet',
+    [LarkResourceType.BASE]: 'bitable',
+    [LarkResourceType.FILE]: 'file',
+    [LarkResourceType.WIKI_NODE]: 'wiki',
+    [LarkResourceType.WIKI_SPACE]: 'wiki',
+    [LarkResourceType.FOLDER]: null,
+    [LarkResourceType.UNKNOWN]: null,
+  };
+  
+  return typeMap[resourceType] ?? null;
+}
+
+/**
+ * 提取 token 和对应的对象类型
+ * 
+ * @param url 飞书资源的完整 URL
+ * @returns TokenWithType 对象，包含 token 和 objType
+ * 
+ * @example
+ * ```ts
+ * // 旧版文档
+ * getTokenOnly('https://sample.feishu.cn/docs/2olt0Ts4Mds7j7iqzdwrqEUnO7q')
+ * // => { token: '2olt0Ts4Mds7j7iqzdwrqEUnO7q', objType: 'doc' }
+ * 
+ * // 新版文档
+ * getTokenOnly('https://sample.feishu.cn/docx/UXEAd6cRUoj5pexJZr0cdwaFnpd')
+ * // => { token: 'UXEAd6cRUoj5pexJZr0cdwaFnpd', objType: 'docx' }
+ * 
+ * // 电子表格
+ * getTokenOnly('https://sample.feishu.cn/sheets/xxx')
+ * // => { token: 'xxx', objType: 'sheet' }
+ * 
+ * // 多维表格
+ * getTokenOnly('https://sample.feishu.cn/base/xxx')
+ * // => { token: 'xxx', objType: 'bitable' }
+ * 
+ * // Wiki 节点
+ * getTokenOnly('https://sample.feishu.cn/wiki/xxx')
+ * // => { token: 'xxx', objType: 'wiki' }
+ * ```
+ */
+export function getTokenOnly(url: string): TokenWithType {
+  const result = extractTokenFromUrl(url);
+  const objType = mapResourceTypeToObjType(result.type);
+  
+  return {
+    token: result.token,
+    objType
+  };
+}
+
+/**
  * 仅提取 token 字符串（不包含类型信息）
+ * @deprecated 使用 getTokenOnly 替代，它会返回 token 和 objType
  * 
  * @param url 飞书资源的完整 URL
  * @returns token 字符串，如果无法识别则返回空字符串
  * 
  * @example
  * ```ts
- * getTokenOnly('https://sample.feishu.cn/docs/2olt0Ts4Mds7j7iqzdwrqEUnO7q')
+ * getTokenString('https://sample.feishu.cn/docs/2olt0Ts4Mds7j7iqzdwrqEUnO7q')
  * // => '2olt0Ts4Mds7j7iqzdwrqEUnO7q'
  * ```
  */
-export function getTokenOnly(url: string): string {
+export function getTokenString(url: string): string {
   return extractTokenFromUrl(url).token;
 }
 

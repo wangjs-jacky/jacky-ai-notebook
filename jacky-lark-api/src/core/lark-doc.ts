@@ -41,7 +41,7 @@ import type {
 export class LarkDoc {
     // ========== API 层实例 ==========
     private wikiNodeAPI: WikiNodeAPI;
-    private docxAPI: DocxAPI;
+    docxAPI: DocxAPI;
     private sheetAPI: SheetAPI;
     private bitableAPI: BitableAPI;
     private wikiSearchAPI: WikiSearchAPI;
@@ -54,7 +54,7 @@ export class LarkDoc {
     constructor(private client: lark.Client) {
         // 初始化 API 层
         this.wikiNodeAPI = new WikiNodeAPI(client);
-        // this.docxAPI = new DocxAPI(client);
+        this.docxAPI = new DocxAPI(client);
         // this.sheetAPI = new SheetAPI(client);
         // this.bitableAPI = new BitableAPI(client);
         // this.wikiSearchAPI = new WikiSearchAPI(client);

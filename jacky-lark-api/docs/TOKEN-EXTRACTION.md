@@ -62,10 +62,13 @@ console.log(result);
 import { getTokenOnly } from 'jacky-lark-api';
 
 const url = 'https://sample.feishu.cn/sheets/MRLOWBf6J47ZUjmwYRsN8utLEoY';
-const token = getTokenOnly(url);
+const { token, objType } = getTokenOnly(url);
 
-console.log(token);
-// 'MRLOWBf6J47ZUjmwYRsN8utLEoY'
+console.log(token);    // 'MRLOWBf6J47ZUjmwYRsN8utLEoY'
+console.log(objType);  // 'sheet'
+
+// 或者直接解构使用
+const { token: sheetToken, objType: sheetType } = getTokenOnly(url);
 ```
 
 ### 3. 批量提取多个 URL
@@ -132,9 +135,30 @@ if (result.type === LarkResourceType.DOCUMENT) {
 }
 ```
 
-### getTokenOnly(url: string): string
+### getTokenOnly(url: string): TokenWithType
 
-仅提取 token 字符串，不返回类型信息。
+提取 token 和对应的对象类型（用于 API 调用）。
+
+**参数：**
+- `url` (string): 飞书资源的完整 URL
+
+**返回：**
+```typescript
+{
+  token: string;         // 提取到的 token
+  objType: ObjType | null;  // 对象类型: 'doc' | 'docx' | 'sheet' | 'mindnote' | 'bitable' | 'file' | 'slides' | 'wiki' | null
+}
+```
+
+**示例：**
+```typescript
+const { token, objType } = getTokenOnly('https://sample.feishu.cn/docx/abc123');
+// { token: 'abc123', objType: 'docx' }
+```
+
+### getTokenString(url: string): string
+
+仅提取 token 字符串（向后兼容，不推荐使用）。
 
 **参数：**
 - `url` (string): 飞书资源的完整 URL

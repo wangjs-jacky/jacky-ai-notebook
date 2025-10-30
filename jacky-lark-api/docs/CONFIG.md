@@ -9,6 +9,7 @@
 | `LARK_APP_ID` | 飞书应用 ID | 是 | `cli_xxxxxx` |
 | `LARK_APP_SECRET` | 飞书应用密钥 | 是 | `your_app_secret` |
 | `LARK_REDIRECT_URI` | OAuth 回调地址 | 是 | `http://localhost:3000/callback` |
+| `LARK_SCOPE` | OAuth 权限范围 | 否 | `"wiki:wiki docx:document"` |
 
 ## 快速开始
 
@@ -25,7 +26,16 @@ cp .env.example .env
 LARK_APP_ID=your_app_id
 LARK_APP_SECRET=your_app_secret
 LARK_REDIRECT_URI=http://localhost:3000/callback
+
+# 权限范围配置（多个权限用空格分隔，建议使用引号包裹）
+LARK_SCOPE="wiki:wiki docx:document"
 ```
+
+**关于 LARK_SCOPE：**
+- 多个权限使用**空格**分隔（符合 OAuth 2.0 标准）
+- **建议使用引号包裹**，确保空格被正确解析
+- SDK 会自动添加 `offline_access` 权限以获取 refresh_token
+- 详细配置说明请参考：[SCOPE-CONFIG.md](./SCOPE-CONFIG.md)
 
 ### 3. 在代码中使用
 

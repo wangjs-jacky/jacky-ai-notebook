@@ -19,10 +19,10 @@ const docClient = new LarkDocClient({
 docClient.setAccessToken('your_user_access_token');
 
 // 后续所有调用都会自动使用这个 token
-const nodeToken = getTokenOnly('https://xxx.feishu.cn/wiki/xxx');
-const nodeInfo = await docClient.getSpaceNode(nodeToken, 'wiki');
+const { token: nodeToken, objType } = getTokenOnly('https://xxx.feishu.cn/wiki/xxx');
+const nodeInfo = await docClient.getSpaceNode(nodeToken, objType || 'wiki');
 const childNodes = await docClient.listAllSpaceNodes(nodeInfo.space_id, nodeToken);
-const allDocs = await docClient.getAllDocuments(nodeToken, 'wiki');
+const allDocs = await docClient.getAllDocuments(nodeToken, objType || 'wiki');
 ```
 
 **优点**：
@@ -48,10 +48,10 @@ const docClient = new LarkDocClient({
 });
 
 const userToken = 'user_access_token_from_somewhere';
-const nodeToken = getTokenOnly('https://xxx.feishu.cn/wiki/xxx');
+const { token: nodeToken, objType } = getTokenOnly('https://xxx.feishu.cn/wiki/xxx');
 
 // 每次调用时传递 token（作为最后一个参数）
-const nodeInfo = await docClient.getSpaceNode(nodeToken, 'wiki', userToken);
+const nodeInfo = await docClient.getSpaceNode(nodeToken, objType || 'wiki', userToken);
 const childNodes = await docClient.listAllSpaceNodes(
   nodeInfo.space_id, 
   nodeToken, 
@@ -59,7 +59,7 @@ const childNodes = await docClient.listAllSpaceNodes(
 );
 const allDocs = await docClient.getAllDocuments(
   nodeToken, 
-  'wiki', 
+  objType || 'wiki', 
   false, 
   10, 
   userToken

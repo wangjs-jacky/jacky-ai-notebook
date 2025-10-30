@@ -26,8 +26,8 @@ export class WikiNodeService {
      * @param url 知识空间节点 URL
      */
     async getNodeByUrl(url: string): Promise<WikiNode | undefined> {
-        const nodeToken = getTokenOnly(url);
-        return this.wikiNodeAPI.getNode(nodeToken, 'wiki');
+        const { token: nodeToken, objType } = getTokenOnly(url);
+        return this.wikiNodeAPI.getNode(nodeToken, objType || 'wiki');
     }
 
     /**
@@ -36,7 +36,7 @@ export class WikiNodeService {
      * @param title 新标题
      */
     async updateNodeByUrl(url: string, title: string): Promise<any> {
-        const nodeToken = getTokenOnly(url);
+        const { token: nodeToken } = getTokenOnly(url);
         const node = await this.getNodeByUrl(url);
         if (!node?.space_id) {
             throw new Error('无法获取节点的 space_id');

@@ -38,7 +38,12 @@ cp .env.example .env
 LARK_APP_ID=your_app_id
 LARK_APP_SECRET=your_app_secret
 LARK_REDIRECT_URI=http://localhost:3000/callback
+
+# 权限范围配置（多个权限用空格分隔，建议使用引号包裹）
+LARK_SCOPE="wiki:wiki docx:document"
 ```
+
+**注意：** 关于 `LARK_SCOPE` 的详细配置说明，请参考 [SCOPE 配置指南](./docs/SCOPE-CONFIG.md)。
 
 ### 2. 一键登录（推荐）
 
@@ -146,11 +151,26 @@ const invalid = extractTokenFromUrl('https://google.com/docs/xxx');
 // { token: '', type: 'unknown', originalUrl: '...' }
 ```
 
-#### `getTokenOnly(url: string): string`
-仅提取 token 字符串
+#### `getTokenOnly(url: string): TokenWithType`
+提取 token 和对应的对象类型
 
 ```typescript
-const token = getTokenOnly('https://feishu.cn/sheets/xxx');
+const { token, objType } = getTokenOnly('https://feishu.cn/sheets/xxx');
+// token: 'xxx', objType: 'sheet'
+
+// 更多示例
+const docResult = getTokenOnly('https://feishu.cn/docx/abc123');
+// { token: 'abc123', objType: 'docx' }
+
+const wikiResult = getTokenOnly('https://feishu.cn/wiki/xyz789');
+// { token: 'xyz789', objType: 'wiki' }
+```
+
+#### `getTokenString(url: string): string`
+仅提取 token 字符串（向后兼容）
+
+```typescript
+const token = getTokenString('https://feishu.cn/sheets/xxx');
 // 'xxx'
 ```
 
@@ -245,12 +265,12 @@ const docClient = new LarkDocClient({
 // 2. 设置访问令牌
 docClient.setAccessToken('your_user_access_token');
 
-// 3. 从 URL 中提取 node_token
+// 3. 从 URL 中提取 node_token 和类型
 const wikiUrl = 'https://xxx.feishu.cn/wiki/N3yNwV4oMicO0UkIpk7crQ2wndg';
-const nodeToken = getTokenOnly(wikiUrl);
+const { token: nodeToken, objType } = getTokenOnly(wikiUrl);
 
-// 4. 获取所有文档
-const documents = await docClient.getAllDocuments(nodeToken, 'wiki');
+// 4. 获取所有文档（自动使用识别的类型）
+const documents = await docClient.getAllDocuments(nodeToken, objType || 'wiki');
 console.log(documents);
 ```
 
@@ -342,6 +362,7 @@ npm run clear:storage
 - [两种使用方式说明](./docs/USAGE-STYLES.md) - 🔄 预设 token vs 调用时传递
 - [持久化存储详细文档](./docs/STORAGE.md)
 - [配置说明文档](./docs/CONFIG.md)
+- [SCOPE 权限配置指南](./docs/SCOPE-CONFIG.md) - 🔐 OAuth 权限范围配置
 - [项目结构说明](./docs/STRUCTURE.md)
 
 ### 飞书官方文档

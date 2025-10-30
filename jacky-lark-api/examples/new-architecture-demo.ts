@@ -18,16 +18,14 @@ async function demoNodeOperations(larkDoc: LarkDoc, wikiUrl: string) {
 
     // 使用新方法获取节点信息
     console.log('1️⃣  使用 nodes.getByUrl() 获取节点:');
-
     const node = await larkDoc.wikiNodeService.getNodeByUrl(wikiUrl);
-    console.log("wjs: node", node);
+    // await larkDoc.wikiNodeService.updateNodeByUrl(wikiUrl, "新标题");
+    // await larkDoc.wikiNodeService.createNodeByUrl(wikiUrl, {
+    //     title: "aaa",
+    // });
 
-    await larkDoc.wikiNodeService.updateNodeByUrl(wikiUrl, "新标题");
-    await larkDoc.wikiNodeService.createNodeByUrl(wikiUrl, {
-        title: "aaa",
-    });
-
-    // const rawContent = await larkDoc.docs.getRawContent(docToken);
+    const rawContent = await larkDoc.docxAPI.getRawContent(node.node_token);
+    console.log("wjs: rawContent", rawContent);
     return node;
 }
 
