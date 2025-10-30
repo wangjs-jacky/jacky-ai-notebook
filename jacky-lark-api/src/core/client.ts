@@ -10,7 +10,7 @@ export class LarkApiClient {
 
   constructor(config: LarkApiClientConfig) {
     this.config = config;
-    this.baseUrl = config.baseUrl || 'https://open.larksuite.com/open-apis';
+    this.baseUrl = config.baseUrl || 'https://open.feishu.cn/open-apis';
   }
 
   /**
@@ -19,16 +19,16 @@ export class LarkApiClient {
    * @returns Promise<AccessTokenResponse>
    */
   async getUserAccessToken(authorizationCode: string): Promise<AccessTokenResponse> {
-    // 注意：飞书 API 使用 app_id 和 app_secret，而不是 client_id 和 client_secret
     const requestData = {
       grant_type: 'authorization_code',
-      app_id: this.config.appId,
-      app_secret: this.config.appSecret,
+      client_id: this.config.appId,
+      client_secret: this.config.appSecret,
       code: authorizationCode,
+      redirect_uri: this.config.redirectUri,
     };
 
     try {
-      const response = await this.makeRequest('/authen/v1/access_token', {
+      const response = await this.makeRequest('/authen/v2/oauth/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

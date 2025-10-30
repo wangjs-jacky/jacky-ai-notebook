@@ -77,12 +77,13 @@ export class LarkOAuthHelper {
    * @param state 可选的状态参数，用于防止 CSRF 攻击
    * @returns 授权链接
    */
-  generateAuthUrl(state?: string): string {
+  generateAuthUrl(state?: string, needRefreshToken: boolean = true): string {
     // TODO: 后续可以添加上 code_challenge 和 code_challenge_method 参数
     const params = new URLSearchParams({
-      app_id: this.config.appId,
+      client_id: this.config.appId,
       redirect_uri: this.config.redirectUri,
       response_type: 'code',
+      scope: this.config.scope + (needRefreshToken ? ' offline_access' : ''),
     });
 
     if (state) {
@@ -95,12 +96,12 @@ export class LarkOAuthHelper {
   // 注册 express 路由，兼容 redirect_uri 的回调
   setupRoutes = () => {
     console.log("📝 注册 /callback 路由...");
-    
+
     this.app.get("/callback", async (req: Request, res: Response) => {
       console.log("🔔 收到回调请求！");
       console.log("请求 URL:", req.url);
       console.log("请求 Query:", req.query);
-      
+
       try {
         // 获取重定向后的路由参数
         const { code, state } = req.query;
@@ -114,7 +115,7 @@ export class LarkOAuthHelper {
 
         console.log("✅ 获取到授权码:", code);
         console.log("✅ 获取到 state:", state);
-        
+
         console.log("🔄 正在获取 user_access_token...");
         const userAccessToken = await this.apiClient.getUserAccessToken(code as string);
         console.log("✅ 成功获取 userAccessToken:", userAccessToken);
@@ -125,19 +126,20 @@ export class LarkOAuthHelper {
           clientId: this.config.appId,
           scopes: [],
           expiresAt: Date.now() + (userAccessToken.expires_in * 1000),
+          expiresIn: userAccessToken.expires_in,
           extra: {
             appId: this.config.appId,
             appSecret: this.config.appSecret,
           },
         };
-        
+
         // 只在 refreshToken 存在时添加
         if (userAccessToken.refresh_token) {
           authInfo.extra.refreshToken = userAccessToken.refresh_token;
         }
-        
+
         authStore.setAuthInfo(authInfo);
-        
+
         console.log("💾 Token 已保存到 authStore");
 
         // 响应客户端
@@ -147,7 +149,7 @@ export class LarkOAuthHelper {
         res.status(500).send(`授权失败: ${error instanceof Error ? error.message : '未知错误'}`);
       }
     });
-    
+
     console.log("✅ 路由注册完成");
   }
 
@@ -175,9 +177,9 @@ export class LarkOAuthHelper {
   //     code: authorizationCode,
   //   };
   //   try {
-      
+
   //   } catch (error) {
-      
+
   //   }
   // }
 }

@@ -4,10 +4,13 @@
  */
 
 // 导出类型定义
-export * from './types/index.js';
+// export * from './types/index.js';
 
 // 导出核心模块
 export * from './core/index.js';
+
+// 导出工具函数
+export * from './utils/index.js';
 
 // 导出配置管理模块
 export * from './config.js';

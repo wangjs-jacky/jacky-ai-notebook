@@ -18,7 +18,7 @@ export function getLarkConfig(): LarkOAuthConfig {
   const appId = process.env['LARK_APP_ID'];
   const appSecret = process.env['LARK_APP_SECRET'];
   const redirectUri = process.env['LARK_REDIRECT_URI'] || 'http://localhost:3000/callback';
-
+  const scope = process.env['LARK_SCOPE'] || "";
   // 验证必需的配置项
   if (!appId || appId === 'your_app_id') {
     throw new Error('请在 .env 文件中配置 LARK_APP_ID');
@@ -32,6 +32,7 @@ export function getLarkConfig(): LarkOAuthConfig {
     appId,
     appSecret,
     redirectUri,
+    scope
   };
 }
 

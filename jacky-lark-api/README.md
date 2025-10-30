@@ -11,6 +11,8 @@
 - ✅ 验证访问令牌有效性
 - ✅ **本地持久化存储**（自动保存和加载认证信息）
 - ✅ **智能缓存**（token 有效期内无需重新授权）
+- ✅ **URL Token 提取**（从飞书资源链接中自动提取 token）
+- ✅ **飞书知识库文档操作**（获取节点信息、子节点列表、文档内容）
 - ✅ 完整的 TypeScript 类型支持
 
 ## 安装
@@ -124,6 +126,44 @@ console.log('用户信息:', userInfo);
 
 ## API 参考
 
+### Token 提取工具
+
+从飞书 URL 中提取各种资源的 token。支持文件夹、文件、文档、电子表格、多维表格、知识空间等。
+
+**安全特性**：自动验证 URL 域名，仅识别飞书官方域名（`feishu.cn`、`larksuite.com` 等），防止误匹配非飞书网站。
+
+#### `extractTokenFromUrl(url: string): TokenResult`
+从飞书 URL 中提取 token 和资源类型
+
+```typescript
+import { extractTokenFromUrl } from 'jacky-lark-api';
+
+const result = extractTokenFromUrl('https://feishu.cn/docs/xxx#');
+// { token: 'xxx', type: 'doc_token', originalUrl: '...' }
+
+// 非飞书域名会被拒绝
+const invalid = extractTokenFromUrl('https://google.com/docs/xxx');
+// { token: '', type: 'unknown', originalUrl: '...' }
+```
+
+#### `getTokenOnly(url: string): string`
+仅提取 token 字符串
+
+```typescript
+const token = getTokenOnly('https://feishu.cn/sheets/xxx');
+// 'xxx'
+```
+
+#### `extractTokensFromUrls(urls: string[]): TokenResult[]`
+批量提取多个 URL 的 token
+
+#### `isValidLarkUrl(url: string): boolean`
+验证 URL 是否为有效的飞书资源 URL
+
+**详细文档：** [TOKEN-EXTRACTION.md](./docs/TOKEN-EXTRACTION.md)
+
+---
+
 ### 配置管理
 
 #### `getLarkConfig(): LarkOAuthConfig`
@@ -187,6 +227,49 @@ console.log('用户信息:', userInfo);
 #### `validateAccessToken(accessToken: string): Promise<boolean>`
 验证访问令牌是否有效
 
+### LarkDocClient（飞书知识库文档操作）
+
+用于操作飞书知识库文档，包括获取节点信息、子节点列表、文档内容等。
+
+#### 快速开始
+
+```typescript
+import { LarkDocClient, getTokenOnly } from 'jacky-lark-api';
+
+// 1. 创建客户端
+const docClient = new LarkDocClient({
+  appId: 'your_app_id',
+  appSecret: 'your_app_secret',
+});
+
+// 2. 设置访问令牌
+docClient.setAccessToken('your_user_access_token');
+
+// 3. 从 URL 中提取 node_token
+const wikiUrl = 'https://xxx.feishu.cn/wiki/N3yNwV4oMicO0UkIpk7crQ2wndg';
+const nodeToken = getTokenOnly(wikiUrl);
+
+// 4. 获取所有文档
+const documents = await docClient.getAllDocuments(nodeToken, 'wiki');
+console.log(documents);
+```
+
+#### 主要 API
+
+##### `getSpaceNode(nodeToken: string, objType?: WikiObjType): Promise<WikiSpaceNode>`
+获取知识空间节点信息（包含 space_id）
+
+##### `listAllSpaceNodes(spaceId: string, parentNodeToken?: string): Promise<WikiSpaceNodeItem[]>`
+获取子节点列表（自动处理分页）
+
+##### `getDocumentContent(objToken: string, objType: WikiObjType): Promise<any>`
+根据文档类型获取文档内容（支持 docx/sheet/bitable）
+
+##### `getAllDocuments(nodeToken: string, objType?: WikiObjType, includeContent?: boolean, maxDepth?: number): Promise<DocumentContent[]>`
+递归获取所有文档（包括子节点）
+
+**详细文档：** [LARK-DOC-API.md](./docs/LARK-DOC-API.md)
+
 ## 类型定义
 
 ```typescript
@@ -216,7 +299,10 @@ interface UserInfoResponse {
 npm run build
 
 # 运行示例
-npm run dev
+npm run example
+
+# 清除本地存储的认证信息
+npm run clear:storage
 ```
 
 ## 注意事项
@@ -250,6 +336,10 @@ npm run dev
 ## 相关文档
 
 ### 项目文档
+- [快速开始指南](./docs/QUICK-START.md) - 🚀 新手必读
+- [Token 提取工具](./docs/TOKEN-EXTRACTION.md) - 🔗 从 URL 中提取 token
+- [飞书知识库文档 API](./docs/LARK-DOC-API.md) - 📚 知识库文档操作
+- [两种使用方式说明](./docs/USAGE-STYLES.md) - 🔄 预设 token vs 调用时传递
 - [持久化存储详细文档](./docs/STORAGE.md)
 - [配置说明文档](./docs/CONFIG.md)
 - [项目结构说明](./docs/STRUCTURE.md)

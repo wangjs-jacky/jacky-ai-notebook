@@ -71,6 +71,9 @@ if (authStore.isTokenExpired()) {
 
 // 清空认证信息（会删除本地文件）
 authStore.clear();
+
+// 或使用命令行清除
+// npm run clear:storage
 ```
 
 ## 自定义存储路径
@@ -245,6 +248,40 @@ const main = async () => {
 
 main();
 ```
+
+## 命令行工具
+
+### 清除存储文件
+
+使用 npm 命令快速清除本地存储的认证信息：
+
+```bash
+npm run clear:storage
+```
+
+**效果：**
+- 删除认证文件（`~/.lark/auth.json`）
+- 如果目录为空，同时删除目录（`~/.lark/`）
+
+**输出示例：**
+```
+✅ 已删除认证文件: /Users/xxx/.lark/auth.json
+✅ 已删除存储目录: /Users/xxx/.lark
+🎉 存储清除完成！
+```
+
+如果文件不存在：
+```
+ℹ️  认证文件不存在，无需清除
+路径: /Users/xxx/.lark/auth.json
+```
+
+**使用场景：**
+- 🔄 强制重新授权（清除旧 token）
+- 🔀 切换不同的飞书账号
+- 🧪 测试授权流程
+- 🐛 解决认证相关的问题
+- 🗑️ 清理敏感信息
 
 ## 故障排查
 
