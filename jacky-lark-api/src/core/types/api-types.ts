@@ -92,3 +92,19 @@ export interface BitableField {
     is_primary?: boolean;
 }
 
+/**
+ * 创建文档参数
+ */
+export interface CreateDocParams {
+    folder_token: string;
+    title: string;
+}
+
+/**
+ * Markdown 转换参数
+ */
+export interface ConvertMarkdownParams {
+    content: string;
+    content_type: 'markdown';
+}
+

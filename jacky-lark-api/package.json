@@ -21,6 +21,7 @@
     "start": "node dist/index.js",
     "example": "npm run build && node dist/examples/index.js",
     "new-architecture-demo": "npm run build && node dist/examples/new-architecture-demo.js",
+    "create-document-demo": "npm run build && node dist/examples/create-document-demo.js",
     "clear:storage": "node scripts/clear-storage.js"
   },
   "keywords": [

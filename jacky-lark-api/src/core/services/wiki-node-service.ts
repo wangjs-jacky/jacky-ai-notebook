@@ -52,7 +52,7 @@ export class WikiNodeService {
         return this.wikiNodeAPI.createNode(node.space_id, {
             obj_type: params?.obj_type || "docx",
             parent_node_token: node.node_token,
-            node_type:params?.node_type || "origin",
+            node_type: params?.node_type || "origin",
             title: params?.title || "",
             origin_node_token: params.origin_node_token,
         });

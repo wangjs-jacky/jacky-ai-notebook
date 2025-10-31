@@ -4,7 +4,7 @@
  */
 import * as lark from '@larksuiteoapi/node-sdk';
 import { BaseAPI } from './base-api.js';
-import type { DocBlock } from '../types/index.js';
+import type { DocBlock, CreateDocParams, ConvertMarkdownParams } from '../types/index.js';
 
 export class DocxAPI extends BaseAPI {
     /**
@@ -68,14 +68,27 @@ export class DocxAPI extends BaseAPI {
         }
         throw new Error(`获取文档块失败: ${response.code} ${response.msg}`);
     }
-
     /**
-     * 创建文档块
-     * 注意：当前 SDK 版本可能不支持此方法
+     * 将 Markdown 内容转换为飞书文档块结构
+     * @param markdown Markdown 内容字符串
+     * @returns 转换后的文档块结构
+     * @doc https://open.larkenterprise.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/convert
      */
-    async createBlock(docToken: string, blockId: string, children: any[], index?: number): Promise<any> {
-        console.warn('createBlock 方法在当前 SDK 版本中可能不可用');
-        return Promise.resolve({ code: -1, msg: 'Method not available in current SDK version' });
+    async convertMarkdown(markdown: string): Promise<any> {
+        const token = this.getUserAccessToken();
+        const response = await this.client.docx.v1.document.convert(
+            {
+                data: {
+                    content_type: 'markdown',
+                    content: markdown,
+                },
+            },
+            lark.withUserAccessToken(token)
+        );
+        if (response.code === 0) {
+            return response.data;
+        }
+        throw new Error(`Markdown 转换失败: ${response.code} ${response.msg}`);
     }
 }
 

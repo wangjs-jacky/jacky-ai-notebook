@@ -2,15 +2,26 @@
  * 文档内容服务
  * 提供跨文档类型的统一操作
  */
+import { getTokenOnly } from '../../utils/token-extractor.js';
 import { DocxAPI, SheetAPI, BitableAPI } from '../api/index.js';
-import type { ObjType, DocumentContent, DocumentStatistics } from '../types/index.js';
+import type { ObjType, DocumentContent, DocumentStatistics, CreateDocParams } from '../types/index.js';
 
 export class DocService {
     constructor(
         private docxAPI: DocxAPI,
         private sheetAPI: SheetAPI,
         private bitableAPI: BitableAPI
-    ) {}
+    ) { }
+
+    async getRawContentByUrl(url: string): Promise<string> {
+        const { token: document_id } = getTokenOnly(url);
+        return this.docxAPI.getRawContent(document_id);
+    }
+
+    async listBlocksByUrl(url: string, pageSize: number = 500, pageToken?: string): Promise<string> {
+        const { token: document_id } = getTokenOnly(url);
+        return this.docxAPI.listBlocks(document_id, pageSize, pageToken);
+    }
 
     /**
      * 统一获取内容接口（根据类型自动选择 API）
