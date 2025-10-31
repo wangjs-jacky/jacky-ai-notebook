@@ -48,7 +48,7 @@ export class LarkDoc {
 
     // ========== Service 层实例 ==========
     wikiNodeService: WikiNodeService;
-    private docService: DocService;
+    docService: DocService;
     private spaceService: SpaceService;
 
     constructor(private client: lark.Client) {
@@ -66,11 +66,11 @@ export class LarkDoc {
             this.sheetAPI,
             this.bitableAPI
         );
-        // this.docService = new DocService(
-        //     this.docxAPI,
-        //     this.sheetAPI,
-        //     this.bitableAPI
-        // );
+        this.docService = new DocService(
+            this.docxAPI,
+            this.sheetAPI,
+            this.bitableAPI
+        );
         // this.spaceService = new SpaceService(
         //     this.wikiNodeAPI,
         //     this.wikiSearchAPI,
