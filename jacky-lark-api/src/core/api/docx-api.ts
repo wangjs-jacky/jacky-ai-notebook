@@ -11,11 +11,11 @@ export class DocxAPI extends BaseAPI {
      * 获取文档纯文本内容
      * @doc https://open.larkenterprise.com/document/server-docs/docs/docs/docx-v1/document/raw_content
      */
-    async getRawContent(docToken: string, lang: 0 | 1 | 2 = 0): Promise<any> {
+    async getRawContent(document_id: string, lang: 0 | 1 | 2 = 0): Promise<any> {
         return this.withUserToken(async (token) => {
             const response = await this.client.docx.v1.document.rawContent(
                 {
-                    path: { document_id: docToken },
+                    path: { document_id },
                     params: { lang },
                 },
                 lark.withUserAccessToken(token)
@@ -23,10 +23,9 @@ export class DocxAPI extends BaseAPI {
             return response;
         });
     }
-
     /**
-     * 获取文档所有块
-     * @doc https://open.larkenterprise.com/document/server-docs/docs/docs/docx-v1/document-block/list
+     * 获取文档基本信息
+     * @doc https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk/preparation-before-development
      */
     async listBlocks(docToken: string, pageSize: number = 500, pageToken?: string): Promise<any> {
         return this.withUserToken(async (token) => {
