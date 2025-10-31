@@ -126,6 +126,49 @@ export class DocService {
     }
 
     /**
+     * 将 Markdown 内容转换并添加到文档
+     * @param docToken 文档 token
+     * @param markdown Markdown 内容
+     * @returns 创建结果
+     */
+    async addMarkdownContent(docToken: string, markdown: string): Promise<any> {
+        // 步骤1: 转换 Markdown 为块结构
+        const blocks = await this.docxAPI.convertMarkdown(markdown);
+
+        // 步骤2: 验证数据结构
+        if (!blocks?.blocks || blocks.blocks.length === 0) {
+            throw new Error('Markdown 转换失败：未生成任何块');
+        }
+
+        if (!blocks?.first_level_block_ids || blocks.first_level_block_ids.length === 0) {
+            throw new Error('Markdown 转换失败：未生成第一级块');
+        }
+
+        // 步骤3: 清理块数据，删除不应该传递的字段
+        const cleanedBlocks = blocks.blocks.map((block: any) => {
+            const cleanBlock = { ...block };
+            
+            // 删除表格块中的 merge_info 字段
+            if (cleanBlock.table?.property?.merge_info) {
+                delete cleanBlock.table.property.merge_info;
+            }
+            
+            return cleanBlock;
+        });
+
+        // 步骤4: 添加到文档
+        const result = await this.docxAPI.createBlockDescendant({
+            document_id: docToken,
+            block_id: docToken,
+            children_id: blocks.first_level_block_ids,
+            descendants: cleanedBlocks,
+            index: 0,
+        });
+
+        return result;
+    }
+
+    /**
      * 获取文档统计信息
      * @param docToken 文档 token
      */

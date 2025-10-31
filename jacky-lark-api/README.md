@@ -13,6 +13,8 @@
 - ✅ **智能缓存**（token 有效期内无需重新授权）
 - ✅ **URL Token 提取**（从飞书资源链接中自动提取 token）
 - ✅ **飞书知识库文档操作**（获取节点信息、子节点列表、文档内容）
+- ✅ **Markdown 转文档**（将 Markdown 转换为飞书文档块结构）
+- ✅ **批量创建文档块**（将内容添加到飞书文档）
 - ✅ 完整的 TypeScript 类型支持
 
 ## 安装
@@ -128,6 +130,51 @@ console.log('user_access_token:', tokenResponse.access_token);
 const userInfo = await apiClient.getUserInfo(tokenResponse.access_token);
 console.log('用户信息:', userInfo);
 ```
+
+### 8. Markdown 转飞书文档（推荐功能）
+
+将 Markdown 内容转换为飞书文档：
+
+```typescript
+import { LarkDoc, larkClient, LoginHandler } from 'jacky-lark-api';
+
+// 登录
+await LoginHandler.handleLogin(config);
+const larkDoc = new LarkDoc(larkClient);
+
+// 步骤1: 创建文档节点
+const newNode = await larkDoc.wikiNodeService.createNodeByUrl(
+    "https://xxx.feishu.cn/wiki/YourParentNodeUrl",
+    { title: '从 Markdown 创建的文档' }
+);
+
+// 步骤2: 准备 Markdown 内容
+const markdown = `
+# 标题
+这是**粗体**和*斜体*文本。
+- 列表项 1
+- 列表项 2
+`;
+
+// 步骤3: 转换 Markdown 为飞书块结构
+const blocks = await larkDoc.docxAPI.convertMarkdown(markdown);
+
+// 步骤4: 将内容添加到文档
+if (blocks?.document?.blocks && blocks.document.blocks.length > 0) {
+    const childrenIds = blocks.document.blocks.map((b: any) => b.block_id);
+    await larkDoc.docxAPI.createBlockDescendant({
+        document_id: newNode.obj_token!,
+        block_id: newNode.obj_token!,
+        children_id: childrenIds,
+        descendants: blocks.document.blocks,
+    });
+}
+
+console.log('文档创建成功！');
+console.log('访问链接:', 'https://xxx.feishu.cn/wiki/' + newNode.node_token);
+```
+
+**详细文档：** [MARKDOWN-TO-DOC.md](./docs/MARKDOWN-TO-DOC.md)
 
 ## API 参考
 

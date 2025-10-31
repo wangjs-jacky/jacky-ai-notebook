@@ -4,7 +4,7 @@
  */
 import * as lark from '@larksuiteoapi/node-sdk';
 import { BaseAPI } from './base-api.js';
-import type { DocBlock, CreateDocParams, ConvertMarkdownParams } from '../types/index.js';
+import type { DocBlock, CreateDocParams, ConvertMarkdownParams, CreateBlockDescendantParams } from '../types/index.js';
 
 export class DocxAPI extends BaseAPI {
     /**
@@ -89,6 +89,37 @@ export class DocxAPI extends BaseAPI {
             return response.data;
         }
         throw new Error(`Markdown 转换失败: ${response.code} ${response.msg}`);
+    }
+
+    /**
+     * 批量创建文档块（用于添加文档内容）
+     * @param params 创建文档块参数
+     * @returns 创建结果
+     * @doc https://open.larkenterprise.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create
+     */
+    async createBlockDescendant(params: CreateBlockDescendantParams): Promise<any> {
+        const token = this.getUserAccessToken();
+        const response = await this.client.docx.v1.documentBlockDescendant.create(
+            {
+                path: {
+                    document_id: params.document_id,
+                    block_id: params.block_id,
+                },
+                params: {
+                    document_revision_id: params.document_revision_id ?? -1, // -1 表示最新版本
+                },
+                data: {
+                    children_id: params.children_id,
+                    index: params.index ?? 0,
+                    descendants: params.descendants,
+                },
+            },
+            lark.withUserAccessToken(token)
+        );
+        if (response.code === 0) {
+            return response.data;
+        }
+        throw new Error(`创建文档块失败: ${response.code} ${response.msg}`);
     }
 }
 

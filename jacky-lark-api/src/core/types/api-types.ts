@@ -108,3 +108,15 @@ export interface ConvertMarkdownParams {
     content_type: 'markdown';
 }
 
+/**
+ * 批量创建文档块参数
+ */
+export interface CreateBlockDescendantParams {
+    document_id: string;
+    block_id: string;
+    children_id: string[];
+    index?: number;
+    descendants: any[];
+    document_revision_id?: number;
+}
+
