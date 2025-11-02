@@ -18,10 +18,12 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc && node dist/index.js",
+    "watch": "tsc --watch",
     "start": "node dist/index.js",
-    "example": "npm run build && node dist/examples/index.js",
-    "new-architecture-demo": "npm run build && node dist/examples/new-architecture-demo.js",
-    "create-document-demo": "npm run build && node dist/examples/create-document-demo.js",
+    "example": "tsx examples/index.ts",
+    "new-architecture-demo": "tsx examples/new-architecture-demo.ts",
+    "create-document-demo": "tsx examples/create-document-demo.ts",
+    "test-scope-config": "tsx examples/test-scope-config.ts",
     "clear:storage": "node scripts/clear-storage.js"
   },
   "keywords": [
@@ -43,6 +45,7 @@
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/node-fetch": "^2.6.11",
+    "tsx": "^4.20.6",
     "typescript": "^5.0.0"
   }
 }

@@ -10,8 +10,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "declaration": false,
-    "declarationMap": false,
+    "declaration": true,
+    "declarationMap": true,
     "removeComments": false,
     "noImplicitAny": false,
     "noImplicitReturns": false,
@@ -27,12 +27,12 @@
     "noEmitOnError": false
   },
   "include": [
-    "src/**/*",
-    "examples/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
     "dist",
+    "examples",
     "**/*.test.ts",
     "**/*.spec.ts"
   ]

@@ -34,7 +34,7 @@ async function demoCreateDocument(larkDoc: LarkDoc) {
         // 步骤2: 准备 Markdown 内容
         // 从 docs/MARKDOWN-TO-DOC.md 文件中读取内容
         console.log('2️⃣  读取 Markdown 文件:');
-        const docPath = path.join(process.cwd(), 'docs', 'MARKDOWN-TO-DOC.md');
+        const docPath = path.join(process.cwd(), 'docs', 'CONFIG.md');
         const mdStr = fs.readFileSync(docPath, 'utf-8');
         
         console.log('   文件路径:', docPath);
