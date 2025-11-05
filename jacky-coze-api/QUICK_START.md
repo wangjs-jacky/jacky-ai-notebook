@@ -220,7 +220,7 @@ console.log(result.conversationId); // 会话 ID
 
 ## 支持
 
-- [GitHub Issues](https://github.com/yourusername/jacky-coze-api/issues)
+- [GitHub Issues](https://github.com/wangjs-jacky/jacky-ai-notebook/issues)
 - [Coze 官方文档](https://www.coze.com/docs)
 - [npm 包](https://www.npmjs.com/package/jacky-coze-api)
 

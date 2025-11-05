@@ -347,7 +347,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Support
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/yourusername/jacky-coze-api/issues) on GitHub.
+If you encounter any issues or have questions, please [open an issue](https://github.com/wangjs-jacky/jacky-ai-notebook/issues) on GitHub.
 
 ## Links
 

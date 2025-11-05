@@ -62,5 +62,5 @@ This project follows [Semantic Versioning](https://semver.org/):
 
 ---
 
-For more details about each release, see the [GitHub Releases](https://github.com/yourusername/jacky-coze-api/releases) page.
+For more details about each release, see the [GitHub Releases](https://github.com/wangjs-jacky/jacky-ai-notebook/releases) page.
 

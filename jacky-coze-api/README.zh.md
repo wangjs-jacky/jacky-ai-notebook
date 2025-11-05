@@ -385,7 +385,7 @@ MIT
 
 ## 支持
 
-如果你遇到任何问题或有疑问，请在 GitHub 上[提交 issue](https://github.com/yourusername/jacky-coze-api/issues)。
+如果你遇到任何问题或有疑问，请在 GitHub 上[提交 issue](https://github.com/wangjs-jacky/jacky-ai-notebook/issues)。
 
 ## 相关链接
 
