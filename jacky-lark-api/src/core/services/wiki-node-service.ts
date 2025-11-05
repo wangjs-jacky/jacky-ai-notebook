@@ -252,5 +252,95 @@ export class WikiNodeService {
 
         return { nodes, path };
     }
+
+    async insertMarkdownToFeishuDoc(
+        url: string,
+        markdown: string,
+        options: {
+            mode?: 'create' | 'append';
+            title?: string;
+        } = {}
+    ): Promise<any> {
+        const { mode = 'create', title } = options;
+
+        if (mode === 'create') {
+            const targetNode = await this.getNodeByUrl(url);
+            if (!targetNode?.space_id) {
+                throw new Error('无法获取目标文档节点信息');
+            }
+
+            const newDocTitle = title || `新文档 ${new Date().toLocaleString('zh-CN')}`;
+            const newNode = await this.createNodeByUrl(url, {
+                title: newDocTitle,
+                obj_type: 'docx',
+                node_type: 'origin',
+            });
+
+            if (!newNode?.obj_token) {
+                throw new Error('创建文档节点失败：未返回 obj_token');
+            }
+
+            await this.addMarkdownContent(newNode.obj_token, markdown);
+
+            return {
+                success: true,
+                mode: 'create',
+                node: newNode,
+                nodeToken: newNode.node_token,
+                docToken: newNode.obj_token,
+                url: `https://trip.larkenterprise.com/wiki/${newNode.node_token}`,
+            };
+        } else {
+            const targetNode = await this.getNodeByUrl(url);
+            if (!targetNode?.obj_token) {
+                throw new Error('无法获取目标文档的 obj_token');
+            }
+
+            const result = await this.addMarkdownContent(
+                targetNode.obj_token,
+                markdown
+            );
+
+            return {
+                success: true,
+                mode: 'append',
+                node: targetNode,
+                nodeToken: targetNode.node_token,
+                docToken: targetNode.obj_token,
+                url: `https://trip.larkenterprise.com/wiki/${targetNode.node_token}`,
+                result: result,
+            };
+        }
+    }
+
+    private async addMarkdownContent(docToken: string, markdown: string): Promise<any> {
+        const blocks = await this.docxAPI.convertMarkdown(markdown);
+
+        if (!blocks?.blocks || blocks.blocks.length === 0) {
+            throw new Error('Markdown 转换失败：未生成任何块');
+        }
+
+        if (!blocks?.first_level_block_ids || blocks.first_level_block_ids.length === 0) {
+            throw new Error('Markdown 转换失败：未生成第一级块');
+        }
+
+        const cleanedBlocks = blocks.blocks.map((block: any) => {
+            const cleanBlock = { ...block };
+            if (cleanBlock.table?.property?.merge_info) {
+                delete cleanBlock.table.property.merge_info;
+            }
+            return cleanBlock;
+        });
+
+        const result = await this.docxAPI.createBlockDescendant({
+            document_id: docToken,
+            block_id: docToken,
+            children_id: blocks.first_level_block_ids,
+            descendants: cleanedBlocks,
+            index: 0,
+        });
+
+        return result;
+    }
 }
 

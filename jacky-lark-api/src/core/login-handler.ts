@@ -3,6 +3,7 @@ import express from 'express';
 import open from 'open';
 import { LarkOAuthHelper } from "./oauth.js";
 import { authStore } from "./auth-store.js";
+import { LarkApiClient } from "./client.js";
 
 export class LoginHandler {
 
@@ -28,8 +29,39 @@ export class LoginHandler {
     }
 
     if (existingAuthInfo && authStore.isTokenExpired()) {
-      console.log("⚠️  本地 token 已过期，需要重新登录");
-      authStore.clear();
+      console.log("⚠️  本地 token 已过期，尝试使用 refreshToken 刷新...");
+      
+      const refreshToken = existingAuthInfo.extra?.refreshToken;
+      if (refreshToken) {
+        try {
+          const apiClient = new LarkApiClient(config);
+          const newTokenResponse = await apiClient.refreshUserAccessToken(refreshToken);
+          
+          const updatedAuthInfo = {
+            ...existingAuthInfo,
+            token: newTokenResponse.access_token,
+            expiresAt: Date.now() + (newTokenResponse.expires_in * 1000),
+            expiresIn: newTokenResponse.expires_in,
+            extra: {
+              ...existingAuthInfo.extra,
+              refreshToken: newTokenResponse.refresh_token || refreshToken,
+            },
+          };
+          
+          authStore.setAuthInfo(updatedAuthInfo);
+          console.log("✅ Token 刷新成功");
+          console.log("Token:", updatedAuthInfo.token.substring(0, 20) + "...");
+          console.log("过期时间:", new Date(updatedAuthInfo.expiresAt!).toLocaleString());
+          return updatedAuthInfo;
+        } catch (error) {
+          console.error("❌ Token 刷新失败:", error);
+          console.log("将清除本地认证信息并重新登录");
+          authStore.clear();
+        }
+      } else {
+        console.log("⚠️  未找到 refreshToken，需要重新登录");
+        authStore.clear();
+      }
     }
 
     console.log("开始 OAuth 登录....");
