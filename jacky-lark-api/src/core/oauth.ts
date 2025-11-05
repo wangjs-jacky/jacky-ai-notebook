@@ -83,7 +83,7 @@ export class LarkOAuthHelper {
       client_id: this.config.appId,
       redirect_uri: this.config.redirectUri,
       response_type: 'code',
-      scope: this.config.scope + (needRefreshToken ? ' offline_access' : ''),
+      scope: (this.config.scope || "") + (needRefreshToken ? ' offline_access' : ''),
     });
 
     if (state) {
@@ -167,19 +167,4 @@ export class LarkOAuthHelper {
       throw new Error(`授权失败: ${error} - ${errorDescription || '未知错误'}`);
     }
   }
-
-
-  // 使用 code → userAccessToken
-  // 飞书说明：https://open.larkenterprise.com/document/authentication-management/access-token/get-user-access-token
-  // exchangeAuthorizationCode(authorizationCode:string){
-  //   const params: Record<string, string> = {
-  //     grant_type: 'authorization_code',
-  //     code: authorizationCode,
-  //   };
-  //   try {
-
-  //   } catch (error) {
-
-  //   }
-  // }
 }

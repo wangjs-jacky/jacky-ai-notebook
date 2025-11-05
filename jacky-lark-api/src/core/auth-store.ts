@@ -50,6 +50,13 @@ export const authStore = {
   },
 
   /**
+   * 获取当前存储路径
+   */
+  getStoragePath: (): string => {
+    return authStore.storageFilePath;
+  },
+
+  /**
    * 设置自定义存储路径
    */
   setStoragePath: (filePath: string): void => {

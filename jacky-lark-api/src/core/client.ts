@@ -44,19 +44,21 @@ export class LarkApiClient {
 
   /**
    * 使用刷新令牌获取新的 user_access_token
+   * 参考文档: https://open.larkenterprise.com/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token
+   * 注意：必须与获取 token 使用相同的 API 版本 (v2)
    * @param refreshToken 刷新令牌
    * @returns Promise<AccessTokenResponse>
    */
   async refreshUserAccessToken(refreshToken: string): Promise<AccessTokenResponse> {
     const requestData = {
       grant_type: 'refresh_token',
+      refresh_token: refreshToken,
       client_id: this.config.appId,
       client_secret: this.config.appSecret,
-      refresh_token: refreshToken,
     };
 
     try {
-      const response = await this.makeRequest('/authen/v1/refresh_access_token', {
+      const response = await this.makeRequest('/authen/v2/oauth/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
