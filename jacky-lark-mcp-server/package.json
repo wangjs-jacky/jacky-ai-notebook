@@ -1,6 +1,6 @@
 {
   "name": "jacky-lark-mcp-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Jacky Lark MCP server",
   "type": "module",
   "bin": {
