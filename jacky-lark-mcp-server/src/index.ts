@@ -1,40 +1,30 @@
 #!/usr/bin/env node
 
 import { MCPServer } from "mcp-framework";
-import { config } from 'dotenv';
 import { Command } from 'commander';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import http from 'http';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import { appConfig } from './config/AppConfig.js';
 import { lark } from 'jacky-lark-api';
 
-// 获取当前文件的目录
+// 获取当前文件的目录路径，用于解析符号链接
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// 加载 .env 文件
-config();
+const __dirname = dirname(__filename);
 
 // 登录处理器
 class LoginHandler {
   static handleWhoAmI() {
     console.log('📋 User Sessions:');
-    const appId = process.env.LARK_APP_ID;
-    const appSecret = process.env.LARK_APP_SECRET;
-    const userAccessToken = process.env.LARK_USER_ACCESS_TOKEN;
+    const appId = appConfig.appId;
+    const appSecret = appConfig.appSecret;
 
     if (appId && appSecret) {
       console.log(`\n✅ App ID: ${appId}`);
       console.log(`✅ App Secret: ${appSecret.substring(0, 8)}...`);
-      if (userAccessToken) {
-        console.log(`✅ User Access Token: ${userAccessToken.substring(0, 20)}...`);
-      } else {
-        console.log(`⚠️  User Access Token: Not set`);
-      }
+      console.log(`⚠️  User Access Token: Not stored (use login command to get it)`);
     } else {
-      console.log('❌ No configuration found. Please run "login" command first.');
+      console.log('❌ No configuration found. Please provide --app-id and --app-secret options.');
     }
   }
 
@@ -93,43 +83,10 @@ class LoginHandler {
             if (tokenData.code === 0) {
               const userAccessToken = tokenData.data.access_token;
 
-              // 保存到 .env 文件
-              const envPath = path.join(process.cwd(), '.env');
-              let envContent = '';
-              if (fs.existsSync(envPath)) {
-                envContent = fs.readFileSync(envPath, 'utf-8');
-              }
-
-              const envLines = envContent.split('\n');
-              const updatedLines: string[] = [];
-              let foundAppId = false;
-              let foundAppSecret = false;
-              let foundToken = false;
-
-              for (const line of envLines) {
-                if (line.startsWith('LARK_APP_ID=')) {
-                  updatedLines.push(`LARK_APP_ID=${appId}`);
-                  foundAppId = true;
-                } else if (line.startsWith('LARK_APP_SECRET=')) {
-                  updatedLines.push(`LARK_APP_SECRET=${appSecret}`);
-                  foundAppSecret = true;
-                } else if (line.startsWith('LARK_USER_ACCESS_TOKEN=')) {
-                  updatedLines.push(`LARK_USER_ACCESS_TOKEN=${userAccessToken}`);
-                  foundToken = true;
-                } else {
-                  updatedLines.push(line);
-                }
-              }
-
-              if (!foundAppId) updatedLines.push(`LARK_APP_ID=${appId}`);
-              if (!foundAppSecret) updatedLines.push(`LARK_APP_SECRET=${appSecret}`);
-              if (!foundToken) updatedLines.push(`LARK_USER_ACCESS_TOKEN=${userAccessToken}`);
-
-              fs.writeFileSync(envPath, updatedLines.join('\n'));
-
               console.log('\n✅ Login successful!');
-              console.log(`✅ User Access Token saved to .env file`);
-              console.log(`✅ Token: ${userAccessToken.substring(0, 20)}...\n`);
+              console.log(`✅ User Access Token: ${userAccessToken.substring(0, 20)}...`);
+              console.log(`\n💡 Note: Please save this token securely. It will not be stored automatically.`);
+              console.log(`   You can use it with --user-access-token option if needed.\n`);
 
               res.writeHead(200, { 'Content-Type': 'text/html' });
               res.end('<html><body><h1>✅ Login Successful!</h1><p>You can close this window now.</p></body></html>');
@@ -223,29 +180,34 @@ program
   .option('--wiki-url <wikiUrl>', '(Optional) Default wiki URL for Feishu/Lark knowledge base')
   .option('--debug', '(Optional) Enable debug mode')
   .action(async (options) => {
+    // 从命令行参数读取配置
+    const appId = options.appId;
+    const appSecret = options.appSecret;
+    const scope = options.scope;
+    const port = options.port;
+    const wikiUrl = options.wikiUrl;
+    const debug = options.debug || false;
+
     const client = new lark.Client({
-      appId: options.appId,
-      appSecret: options.appSecret,
+      appId: appId,
+      appSecret: appSecret,
     });
     appConfig.update({
-      appId: options.appId,
-      appSecret: options.appSecret,
-      scope: options.scope,
-      port: options.port,
-      wikiUrl: options.wikiUrl,
-      debug: options.debug,
+      appId: appId,
+      appSecret: appSecret,
+      scope: scope,
+      port: port,
+      wikiUrl: wikiUrl,
+      debug: debug,
       client: client
     });
-
-    // 同步到环境变量（向下兼容）
-    appConfig.syncToEnv();
 
     // 验证配置
     const validation = appConfig.validate();
     if (!validation.valid) {
       console.error('\n❌ Configuration Error:\n');
       validation.errors.forEach(err => console.error(`   ${err}`));
-      console.error('\n💡 Tip: You can set these in .env file or use command line options.');
+      console.error('\n💡 Tip: Use command line options to provide configuration.');
       console.error('   Example: npm start -- --app-id YOUR_APP_ID --app-secret YOUR_APP_SECRET\n');
       process.exit(1);
     }
@@ -256,7 +218,9 @@ program
     }
 
     // 创建并启动 MCP Server
+    // 使用 __dirname 作为 basePath，确保无论通过什么方式执行都能正确找到 tools
     const server = new MCPServer({
+      basePath: __dirname,
       transport: {
         type: "stdio",
       }
