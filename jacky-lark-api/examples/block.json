@@ -1,0 +1,2469 @@
+{
+  "has_more": false,
+  "items": [
+    {
+      "block_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "block_type": 1,
+      "children": [
+        "doxcn1pKAWDIbJdklJ3EnAl57Kd",
+        "doxcn7QgxHrVtpKqFtqXMLWXpgh",
+        "doxcnnq9wfTt785aLM4ONUPfhBc",
+        "doxcn6NDziVDlL6iLssas3Eaevd",
+        "doxcnhA1GMFYCsheYvZ4b4kIHRh",
+        "doxcnlD1QA2NFigvKryXBEiCWWh",
+        "doxcn9XA6YVDVmV6Knzuvnq7Emd",
+        "doxcnqE4y7EtMYsUOCWUoFBDzec",
+        "doxcnaicLiAbkBREOODocnb9FrC",
+        "doxcns9jTGvvAdoejGHCUTILPac",
+        "doxcnM4qEkQgjsqwoXmYzhu6ktf",
+        "doxcnOi9RvUlbSWSK8lMyTf43NH",
+        "doxcn5X3DQJGKDexRNDHfk8pumf",
+        "doxcn6kkiKFVPJPlCXB0qTYnmxe",
+        "doxcnBYS4zZtgTrUTYVQ5WaA9Jf",
+        "doxcn1NIR78tyLPgn3S0n67Espf",
+        "doxcny7qYclqs9RknEVSRa157tc",
+        "doxcn9aZos4VjeuKT7YOFIpxdFg",
+        "doxcnOkiZuA9XUT5DP7jA0u3LxS",
+        "doxcnWBxHZNmsaiwJEXfO89HPef",
+        "doxcned2yQ7emQgiQRoDaooytye",
+        "doxcnZOQ1EzHvZrqGzJ1HqztgGc",
+        "doxcnlpcRkpnlZc3BhXXBo95Jce",
+        "doxcnjCfdaEIkipOyXbjierekDe",
+        "doxcnAdAMEepAFpdCnxWgBrmrPf",
+        "doxcnYCTlUqAN6ZligycRcJ3j6b",
+        "doxcnssPEJDzKLiBwnrVKNxE6Se",
+        "doxcngJa4dSYOZndnanelMIiShv",
+        "doxcnF9IZpqqsWcvWICxk5Pf0pg",
+        "doxcnAzKDtKAdafJ3rUdzm5l29c",
+        "doxcnp51W4bIQohPT49GBh7tzyQ",
+        "doxcnArVPlTE38EJ6gUFMz3iZgH",
+        "doxcnapujaI26zPdHfz6hx5dbCd",
+        "doxcnnNnvvIPooXIaLbqyM8J36b",
+        "doxcnxwQrxGJMIhQ7t2ssGqE4Wo",
+        "doxcnZSr35Z5TB2uDH0bkCOqjUg",
+        "doxcn5CQ7j160oHL0aGrENyyE8e",
+        "doxcn0w9uSdTB3ejLkdgX5Yu74g",
+        "doxcn4YudSeyF6DStjq2SzoIOHd",
+        "doxcnBXTA2U3Bu2Otq5EFGR4Gid",
+        "doxcn3IfXoxkjZFHX8g93ehhGIf",
+        "doxcncnaQYRTO5VIDaM2DASjnJf",
+        "doxcnQhVbK6Eyad4tZZrTXM6IUu",
+        "doxcnyblmO6zi6Y0811jeNx1CkI",
+        "doxcnqS9pbBTZrBx040RXOOrOQh",
+        "doxcnYQhM2budcfYrMXZsyjOb0j",
+        "doxcnyLtirnJVjBPYDAO0ghPuub",
+        "doxcnRkgoYDZGujVmyXJYsc3Vob",
+        "doxcnNTIEuoogUpM2dj7HOuFxEh",
+        "doxcnExgGTOGweUfeedsV0zh3dd",
+        "doxcnE0scoP0RIYwhvQKWrmEvGn",
+        "doxcnCJmmHSga4KHFN4hLiwZRCc",
+        "doxcn92wYdX30EvKTWXA29WDkTg",
+        "doxcnG0UO6b3Z5r9YNICj9wXb1f",
+        "doxcn2y0JAr0Z1AJfzoPsTK04md",
+        "doxcn5QjLIxRI3TdvCfyLEe9bLh",
+        "doxcnKbezTZvL8mRXroNhC9JRWe",
+        "doxcnkGupnmpKgFypXSVKipfPkT",
+        "doxcnFo5jVNpEgNKbSNRbaQnl0e",
+        "doxcnfEQQSSDo17EzxyAyYFToIc",
+        "doxcnAklPpCbQ7a8zuGpktn3O4d"
+      ],
+      "page": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "详情页提升 LightHouse 方案总结 副本",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1
+        }
+      },
+      "parent_id": ""
+    },
+    {
+      "block_id": "doxcn1pKAWDIbJdklJ3EnAl57Kd",
+      "block_type": 3,
+      "heading1": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "如何统计 Lighthouse 得分 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn7QgxHrVtpKqFtqXMLWXpgh",
+      "block_type": 2,
+      "children": [
+        "doxcnjn4WsbBeeqRAvYAJ7k25ZU"
+      ],
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "携程短链：",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "Chrome",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " 输入 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "/thunderwolf",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnjn4WsbBeeqRAvYAJ7k25ZU",
+      "block_type": 27,
+      "image": {
+        "align": 1,
+        "height": 2078,
+        "scale": 1,
+        "token": "SN4dbqf1Qo5GmexR1QscZBzEnGf",
+        "width": 5598
+      },
+      "parent_id": "doxcn7QgxHrVtpKqFtqXMLWXpgh"
+    },
+    {
+      "block_id": "doxcnnq9wfTt785aLM4ONUPfhBc",
+      "block_type": 3,
+      "heading1": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "分析问题",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn6NDziVDlL6iLssas3Eaevd",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "一般我们使用两个工具，分别是 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "lighthouse",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " 以及 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "performance",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnhA1GMFYCsheYvZ4b4kIHRh",
+      "block_type": 4,
+      "heading2": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "Lighthouse",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnlD1QA2NFigvKryXBEiCWWh",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "Lighthouse 只是反应一个网站体验的综合指标，并不是性能越好分数越高，里头考虑的点很多。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcn9XA6YVDVmV6Knzuvnq7Emd",
+      "block_type": 34,
+      "children": [
+        "doxcnqhLF17nmfbEVjiOz933fLf"
+      ],
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "quote_container": {}
+    },
+    {
+      "block_id": "doxcnqhLF17nmfbEVjiOz933fLf",
+      "block_type": 2,
+      "parent_id": "doxcn9XA6YVDVmV6Knzuvnq7Emd",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "不知道是我不会用还是怎么说，lighthouse 面板中反馈出来的信息没什么头绪，只能作为一个参考，更有用的反而是性能面板，但是特别注意的是 lighthouse 并不等价于 性能。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnqE4y7EtMYsUOCWUoFBDzec",
+      "block_type": 27,
+      "image": {
+        "align": 2,
+        "height": 1404,
+        "scale": 0.2365482233502538,
+        "token": "AuqtbLRw8okoYPxwq6LcnHMgnVh",
+        "width": 1970
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnaicLiAbkBREOODocnb9FrC",
+      "block_type": 4,
+      "heading2": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "Performance 面板",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcns9jTGvvAdoejGHCUTILPac",
+      "block_type": 5,
+      "heading3": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "一、FCP ≈ LCP（本地）✅",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnM4qEkQgjsqwoXmYzhu6ktf",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "在详情页中，在 SSR 渲染阶段，就已经渲染出内容了，最大内容是图片信息，本地看下来两者基本上一致的，这样基本上就没啥太大的问题。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnOi9RvUlbSWSK8lMyTf43NH",
+      "block_type": 27,
+      "image": {
+        "align": 2,
+        "height": 1380,
+        "scale": 1,
+        "token": "EV8PbHrTNozEo1xVub1cOmBInTf",
+        "width": 1832
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn5X3DQJGKDexRNDHfk8pumf",
+      "block_type": 5,
+      "heading3": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "二、网络面板",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn6kkiKFVPJPlCXB0qTYnmxe",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "可以从以下几个方面看图",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnBYS4zZtgTrUTYVQ5WaA9Jf",
+      "block_type": 6,
+      "heading4": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "信息1 ： 资源加载的图形（排队和连接、已发送请求、内容下载、主线程等待）",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn1NIR78tyLPgn3S0n67Espf",
+      "block_type": 27,
+      "image": {
+        "align": 1,
+        "height": 444,
+        "scale": 0.5203252032520326,
+        "token": "L5bBboS0CowXGkxPiiXcRTfqnQb",
+        "width": 984
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcny7qYclqs9RknEVSRa157tc",
+      "block_type": 34,
+      "children": [
+        "doxcnAXtp0YzHZDubKUriLNOjI5",
+        "doxcn3BXfV69WW6QyM5FxRGFyMO",
+        "doxcn098NoKhTI6ffLlCTu353ge",
+        "doxcnqlThXd11CmvbbdIK1Ag2Xb",
+        "doxcnJt2W8VD8T51T3P6cLFl38c",
+        "doxcnm0YxG9R7sLz0ASu5LFeCsf",
+        "doxcnH7L63Em6t1ApcjrRXHzhMe",
+        "doxcn3wzFvdFTiQDkmsjcNQMGCc",
+        "doxcnSWeV9TSlgCeZn4errFO0jd",
+        "doxcnhPVdo2WZ4EEt5Xb0A8txMh",
+        "doxcnysYy8hWDwZLkYCY3Yz7ZFh",
+        "doxcnUebPwzIiKuk0jZlx7JoFcc",
+        "doxcnVHh0hgqqoDS4J1QX3UjE3e",
+        "doxcnaxi3uDzRLEegRq23hn435c",
+        "doxcnMt9w3oQ10hDyittlpS8eDc",
+        "doxcnyeWjXW3ppBPYi67NuD1uLT"
+      ],
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "quote_container": {}
+    },
+    {
+      "block_id": "doxcnAXtp0YzHZDubKUriLNOjI5",
+      "block_type": 13,
+      "ordered": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "排队和连接 (Queueing and Connection) - 6.08 ms",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false,
+          "sequence": "1"
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcn3BXfV69WW6QyM5FxRGFyMO",
+      "block_type": 2,
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "这个阶段是请求在发出前所等待的时间。它通常包含以下子阶段：",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcn098NoKhTI6ffLlCTu353ge",
+      "block_type": 12,
+      "bullet": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "排队 (Queueing)：浏览器为每个HTTP请求设置了优先级，",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "并且对同一个源（domain）的TCP连接数量有限制（通常是6个）",
+              "text_element_style": {
+                "background_color": 3,
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "。如果当前的连接数已满，新的请求就需要排队等待。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcnqlThXd11CmvbbdIK1Ag2Xb",
+      "block_type": 12,
+      "bullet": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "建立连接 (Connection)：如",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "果之前没有与这个服务器（这里是 ",
+              "text_element_style": {
+                "background_color": 3,
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "aw-s.tripcdn.com",
+              "text_element_style": {
+                "background_color": 3,
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "）建立过连接，还需要花费时间进行TCP三次握手",
+              "text_element_style": {
+                "background_color": 3,
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "、协商TLS/SSL加密（如果是HTTPS的话）。你这里只花了6ms，说明连接可能被复用了，或者网络条件很好，几乎没有等待。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcnJt2W8VD8T51T3P6cLFl38c",
+      "block_type": 13,
+      "ordered": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "已发送请求，正在等待处理 (Request Sent, Waiting for Response) - 67.88 ms",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false,
+          "sequence": "auto"
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcnm0YxG9R7sLz0ASu5LFeCsf",
+      "block_type": 2,
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "这个阶段通常被称为 TTFB (Time To First Byte)，即首字节时间。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "它衡量了从请求发送到服务器，到浏览器接收到服务器返回的第一个数据包之间的时间",
+              "text_element_style": {
+                "background_color": 3,
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "。这个时间主要包括：",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnH7L63Em6t1ApcjrRXHzhMe",
+      "block_type": 12,
+      "bullet": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "网络传输时间：请求从你的电脑传到服务器的时间。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcn3wzFvdFTiQDkmsjcNQMGCc",
+      "block_type": 12,
+      "bullet": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "服务器处理时间：服务器收到请求后，处理这个请求（例如，在磁盘上找到这个CSS文件）所花费的时间。这是TTFB的大头。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcnSWeV9TSlgCeZn4errFO0jd",
+      "block_type": 12,
+      "bullet": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "响应传回时间：服务器生成的响应第一个字节传回你浏览器的时间。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcnhPVdo2WZ4EEt5Xb0A8txMh",
+      "block_type": 2,
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "67.88ms 的TTFB是一个非常好的成绩，说明服务器响应非常迅速，网络延迟也很低。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnysYy8hWDwZLkYCY3Yz7ZFh",
+      "block_type": 13,
+      "ordered": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "内容下载 (Content Download) - 0.36 ms",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false,
+          "sequence": "auto"
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcnUebPwzIiKuk0jZlx7JoFcc",
+      "block_type": 2,
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "这是浏览器从服务器接收响应体数据所花费的时间。时间长短直接取决于",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "文件大小",
+              "text_element_style": {
+                "background_color": 3,
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "和网络带宽。\n",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "这个CSS文件（",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "fon...eb72cd00784f9d036157b6761.css",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "）看起来是经过哈希命名的，很可能非常小（可能只有几KB），并且你的网速很快，所以几乎瞬间就下载完成了。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnVHh0hgqqoDS4J1QX3UjE3e",
+      "block_type": 13,
+      "ordered": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "在主线程上等待 (Waiting in Main Thread) - 0.49 ms",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false,
+          "sequence": "auto"
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcnaxi3uDzRLEegRq23hn435c",
+      "block_type": 2,
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "这个阶段不是网络请求的一部分，而是浏览器内部处理这个资源所花的时间。当下载完成后",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "，资源需要被交给浏览器的主线程",
+              "text_element_style": {
+                "background_color": 3,
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "进行处理。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnMt9w3oQ10hDyittlpS8eDc",
+      "block_type": 12,
+      "bullet": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "对于CSS文件，处理包括：解析CSS规则，并将其添加到浏览器的样式规则集中。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcnyeWjXW3ppBPYi67NuD1uLT",
+      "block_type": 12,
+      "bullet": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "这个时间很短，说明CSS文件解析起来很快，没有造成主线程的拥堵。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "doxcny7qYclqs9RknEVSRa157tc"
+    },
+    {
+      "block_id": "doxcn9aZos4VjeuKT7YOFIpxdFg",
+      "block_type": 6,
+      "heading4": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "信息2： 观察资源的加载顺序",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnOkiZuA9XUT5DP7jA0u3LxS",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "可以发现资源和资源加载之前是有顺序的",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnWBxHZNmsaiwJEXfO89HPef",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "在 SSR 返回的模板文件中，加载了一个 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "link",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " 标签，其中加载一段 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "font",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " 文件（改文件为框架自带的）",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcned2yQ7emQgiQRoDaooytye",
+      "block_type": 27,
+      "image": {
+        "align": 2,
+        "height": 722,
+        "scale": 0.2936802973977695,
+        "token": "Ysm6bVuFJoKjrwxS01ncc44endc",
+        "width": 2152
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnZOQ1EzHvZrqGzJ1HqztgGc",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "我们打开这个文件后可以发现，这个 font 中又去加载了其他的字体包文件",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnlpcRkpnlZc3BhXXBo95Jce",
+      "block_type": 27,
+      "image": {
+        "align": 2,
+        "height": 712,
+        "scale": 0.2550382209867964,
+        "token": "SCF5bpgG3oVHdgxcs19cnHpznIg",
+        "width": 2878
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnjCfdaEIkipOyXbjierekDe",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "因此在网络面板中我们可以看到如下资源加载顺序，先加载 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "font",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " → 同时加载了 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "TripGeom-Regular/Bold/Medium",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " 字体包",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnAdAMEepAFpdCnxWgBrmrPf",
+      "block_type": 27,
+      "image": {
+        "align": 2,
+        "height": 184,
+        "scale": 0.5269565217391304,
+        "token": "Kj6GbHYxiotUSmxxmNccDvMXnte",
+        "width": 1150
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnYCTlUqAN6ZligycRcJ3j6b",
+      "block_type": 27,
+      "image": {
+        "align": 2,
+        "height": 214,
+        "scale": 0.9032258064516129,
+        "token": "YlZabCkoHo3EONxXzJWcZMgCnUh",
+        "width": 682
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnssPEJDzKLiBwnrVKNxE6Se",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "我们看下图标库 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "crn_font_ttd_mini_page",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " 会在资源加载后，会肉眼见到一个图标从无到有的过程，说明可以将字体包这个过程提前（使用 preload）",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcngJa4dSYOZndnanelMIiShv",
+      "block_type": 27,
+      "image": {
+        "align": 2,
+        "height": 390,
+        "scale": 0.38674698795180723,
+        "token": "HbvLblCbVoR3sAxgju2cPakXnyb",
+        "width": 1660
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnF9IZpqqsWcvWICxk5Pf0pg",
+      "block_type": 33,
+      "children": [
+        "doxcnTftxrve6oy8ltoXHNl0NRd"
+      ],
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "view": {
+        "view_type": 2
+      }
+    },
+    {
+      "block_id": "doxcnTftxrve6oy8ltoXHNl0NRd",
+      "block_type": 23,
+      "file": {
+        "name": "2025-09-10 00.10.13.mp4",
+        "token": "CFikbdHtYo1Ecmxxmvgcqwyin2e"
+      },
+      "parent_id": "doxcnF9IZpqqsWcvWICxk5Pf0pg"
+    },
+    {
+      "block_id": "doxcnAzKDtKAdafJ3rUdzm5l29c",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnp51W4bIQohPT49GBh7tzyQ",
+      "block_type": 5,
+      "heading3": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "三、布局偏移量",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnArVPlTE38EJ6gUFMz3iZgH",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "通过分析可以发现详情页存在两处偏移，一般偏移的越多得分越低，这一点可以在 lighthouse 中看到",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnapujaI26zPdHfz6hx5dbCd",
+      "block_type": 27,
+      "image": {
+        "align": 1,
+        "height": 1282,
+        "scale": 0.27548209366391185,
+        "token": "LzfqbF7Uqol29cxqK2dcPqRsn8c",
+        "width": 1452
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnnNnvvIPooXIaLbqyM8J36b",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "通过 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "performance",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "面板，可以快速定位这两个点。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnxwQrxGJMIhQ7t2ssGqE4Wo",
+      "block_type": 33,
+      "children": [
+        "doxcnmXpE8MgCOJ7pi92NzjI9Ab"
+      ],
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "view": {
+        "view_type": 2
+      }
+    },
+    {
+      "block_id": "doxcnmXpE8MgCOJ7pi92NzjI9Ab",
+      "block_type": 23,
+      "file": {
+        "name": "2025-09-10 00.25.21.mp4",
+        "token": "JAKlbFUFGoDeGjxOHyocRt1FnTe"
+      },
+      "parent_id": "doxcnxwQrxGJMIhQ7t2ssGqE4Wo"
+    },
+    {
+      "block_id": "doxcnZSr35Z5TB2uDH0bkCOqjUg",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcn5CQ7j160oHL0aGrENyyE8e",
+      "block_type": 5,
+      "heading3": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "四、主进程面板",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn0w9uSdTB3ejLkdgX5Yu74g",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "通过这个面板发现 require 模块的性能",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcn4YudSeyF6DStjq2SzoIOHd",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnBXTA2U3Bu2Otq5EFGR4Gid",
+      "block_type": 5,
+      "heading3": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "五、包体积",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn3IfXoxkjZFHX8g93ehhGIf",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "主要原因是：xTaro 框架会自动将模块中的 css 文件给注入到 renderHTML 文件中，如果没有使用 XDanimyic 的话，会添加很多额外的内容。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcncnaQYRTO5VIDaM2DASjnJf",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "优化前：111 KB，代码函数：27273",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnQhVbK6Eyad4tZZrTXM6IUu",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "优化后：84.9KB，代码行数：19970",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnyblmO6zi6Y0811jeNx1CkI",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "差值：26.1KB （76%），行数：-7303",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnqS9pbBTZrBx040RXOOrOQh",
+      "block_type": 33,
+      "children": [
+        "doxcngPSDR3iAJkFVw1kJJot08b"
+      ],
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "view": {
+        "view_type": 2
+      }
+    },
+    {
+      "block_id": "doxcngPSDR3iAJkFVw1kJJot08b",
+      "block_type": 23,
+      "file": {
+        "name": "2025-09-10 00.41.07.mp4",
+        "token": "WOZLbIJcHogt1dxhWGacLIKHnKe"
+      },
+      "parent_id": "doxcnqS9pbBTZrBx040RXOOrOQh"
+    },
+    {
+      "block_id": "doxcnYQhM2budcfYrMXZsyjOb0j",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnyLtirnJVjBPYDAO0ghPuub",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnRkgoYDZGujVmyXJYsc3Vob",
+      "block_type": 3,
+      "heading1": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "解决方案",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnNTIEuoogUpM2dj7HOuFxEh",
+      "block_type": 5,
+      "heading3": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "使用 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "preload",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnExgGTOGweUfeedsV0zh3dd",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "浏览器会在解析 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "HTML",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " 之前会有一个预解析的过程，当资源上存在 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "preload",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " 时就会提前加载。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnE0scoP0RIYwhvQKWrmEvGn",
+      "block_type": 19,
+      "callout": {
+        "background_color": 2,
+        "border_color": 2,
+        "emoji_id": "japanese_ogre"
+      },
+      "children": [
+        "doxcn50OkiCFXPpkYOVRJtzzkjg"
+      ],
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn50OkiCFXPpkYOVRJtzzkjg",
+      "block_type": 2,
+      "parent_id": "doxcnE0scoP0RIYwhvQKWrmEvGn",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "风险点：如果你错误地 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "preload",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": " 了一个非关键资源，它就会以最高优先级去和真正关键的资源（如首屏CSS、渲染必需的JS）竞争网络带宽和TCP连接。这相当于让一个VIP插了真正关键任务的队，可能反而拖慢了整个页面的渲染。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnCJmmHSga4KHFN4hLiwZRCc",
+      "block_type": 19,
+      "callout": {
+        "background_color": 2,
+        "border_color": 2,
+        "emoji_id": "star"
+      },
+      "children": [
+        "doxcnSLcraDPatBnARUqILN8yef"
+      ],
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnSLcraDPatBnARUqILN8yef",
+      "block_type": 2,
+      "parent_id": "doxcnCJmmHSga4KHFN4hLiwZRCc",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "遵循一个核心原则：仅对最最关键的首屏渲染资源使用 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "preload",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "。",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcn92wYdX30EvKTWXA29WDkTg",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnG0UO6b3Z5r9YNICj9wXb1f",
+      "block_type": 5,
+      "heading3": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "解决偏移量",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn2y0JAr0Z1AJfzoPsTK04md",
+      "block_type": 13,
+      "ordered": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "原因是服务端样式稍微有一点点问题",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false,
+          "sequence": "1"
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcn5QjLIxRI3TdvCfyLEe9bLh",
+      "block_type": 33,
+      "children": [
+        "doxcnqlnWpENa5sYGMpYBFuKJuc"
+      ],
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "view": {
+        "view_type": 2
+      }
+    },
+    {
+      "block_id": "doxcnqlnWpENa5sYGMpYBFuKJuc",
+      "block_type": 23,
+      "file": {
+        "name": "2025-09-10 00.31.00.mp4",
+        "token": "AoHwbW6jjoWEQlxAABacHlxFnwf"
+      },
+      "parent_id": "doxcn5QjLIxRI3TdvCfyLEe9bLh"
+    },
+    {
+      "block_id": "doxcnKbezTZvL8mRXroNhC9JRWe",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "改的方案为",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    },
+    {
+      "block_id": "doxcnkGupnmpKgFypXSVKipfPkT",
+      "block_type": 14,
+      "code": {
+        "elements": [
+          {
+            "text_run": {
+              "content": ".swiper-first-screen .taro-img {\n    display: block;\n",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "}",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "language": 12,
+          "wrap": false
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnFo5jVNpEgNKbSNRbaQnl0e",
+      "block_type": 13,
+      "ordered": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "第二个问题是 XDynamic 时，加载组件时，需要有一个占位高度，注意 h5 中使用 ",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "rem",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          },
+          {
+            "text_run": {
+              "content": "单位",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false,
+          "sequence": "auto"
+        }
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnfEQQSSDo17EzxyAyYFToIc",
+      "block_type": 27,
+      "image": {
+        "align": 2,
+        "height": 718,
+        "scale": 0.36702767749699156,
+        "token": "IBrhbsdo1oThlIxsYvtcfLpmn0c",
+        "width": 1662
+      },
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg"
+    },
+    {
+      "block_id": "doxcnAklPpCbQ7a8zuGpktn3O4d",
+      "block_type": 2,
+      "parent_id": "EwALwz4TtiX0fjkRfXUc8zxInIg",
+      "text": {
+        "elements": [
+          {
+            "text_run": {
+              "content": "",
+              "text_element_style": {
+                "bold": false,
+                "inline_code": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false
+              }
+            }
+          }
+        ],
+        "style": {
+          "align": 1,
+          "folded": false
+        }
+      }
+    }
+  ]
+}
