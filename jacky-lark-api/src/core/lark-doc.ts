@@ -8,7 +8,6 @@
  * - Facade Layer: 门面层，统一对外接口
  */
 import * as lark from '@larksuiteoapi/node-sdk';
-import { authStore } from './auth-store.js';
 
 // API 层
 import {
