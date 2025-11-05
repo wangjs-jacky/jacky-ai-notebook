@@ -16,6 +16,7 @@ import {
     SheetAPI,
     BitableAPI,
     WikiSearchAPI,
+    DriveAPI,
 } from './api/index.js';
 
 // Service 层
@@ -44,6 +45,7 @@ export class LarkDoc {
     private sheetAPI: SheetAPI;
     private bitableAPI: BitableAPI;
     private wikiSearchAPI: WikiSearchAPI;
+    driveAPI: DriveAPI;
 
     // ========== Service 层实例 ==========
     wikiNodeService: WikiNodeService;
@@ -54,6 +56,7 @@ export class LarkDoc {
         // 初始化 API 层
         this.wikiNodeAPI = new WikiNodeAPI(client);
         this.docxAPI = new DocxAPI(client);
+        this.driveAPI = new DriveAPI(client);
         // this.sheetAPI = new SheetAPI(client);
         // this.bitableAPI = new BitableAPI(client);
         // this.wikiSearchAPI = new WikiSearchAPI(client);
@@ -68,7 +71,8 @@ export class LarkDoc {
         this.docService = new DocService(
             this.docxAPI,
             this.sheetAPI,
-            this.bitableAPI
+            this.bitableAPI,
+            this.driveAPI
         );
         // this.spaceService = new SpaceService(
         //     this.wikiNodeAPI,

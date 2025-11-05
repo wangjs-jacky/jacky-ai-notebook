@@ -37,7 +37,7 @@ class AddMarkdownToFeiShuTool extends MCPTool<DataProcessorInput> {
     },
     mode: {
       type: z.enum(['create', 'append']).optional(),
-      description: "操作模式：'create' 创建新文档，'append' 追加内容到已有文档（默认：append）",
+      description: "操作模式：'create' 创建新文档，'append' 追加内容到已有文档（默认: create）",
     },
     title: {
       type: z.string().optional(),

@@ -220,6 +220,7 @@ program
     '(Optional) Specify OAuth scope for user access token, default is all permissions granted to the app, separated by spaces or commas',
   )
   .option('-p, --port <port>', '(Optional) Port to listen (default: "3000")', parseInt)
+  .option('--wiki-url <wikiUrl>', '(Optional) Default wiki URL for Feishu/Lark knowledge base')
   .option('--debug', '(Optional) Enable debug mode')
   .action(async (options) => {
     const client = new lark.Client({
@@ -231,6 +232,7 @@ program
       appSecret: options.appSecret,
       scope: options.scope,
       port: options.port,
+      wikiUrl: options.wikiUrl,
       debug: options.debug,
       client: client
     });

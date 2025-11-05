@@ -17,6 +17,7 @@ export class AppConfig {
   public port: number;
   public debug: boolean;
   public redirectUri: string;
+  public wikiUrl?: string;
   public client: lark.Client | undefined;
   private constructor() {
     // 从环境变量加载默认值
@@ -25,6 +26,7 @@ export class AppConfig {
     this.domain = process.env.LARK_DOMAIN || 'https://open.feishu.cn';
     this.scope = process.env.LARK_SCOPE;
     this.redirectUri = process.env.LARK_REDIRECT_URI || 'http://localhost:3000/callback';
+    this.wikiUrl = process.env.LARK_WIKI_URL;
 
     // 设置默认值
     this.port = 3000;
