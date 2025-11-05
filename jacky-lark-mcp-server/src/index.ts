@@ -8,6 +8,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import http from 'http';
 import { appConfig } from './config/AppConfig.js';
+import { lark } from 'jacky-lark-api';
 
 // 获取当前文件的目录
 const __filename = fileURLToPath(import.meta.url);
@@ -23,7 +24,7 @@ class LoginHandler {
     const appId = process.env.LARK_APP_ID;
     const appSecret = process.env.LARK_APP_SECRET;
     const userAccessToken = process.env.LARK_USER_ACCESS_TOKEN;
-    
+
     if (appId && appSecret) {
       console.log(`\n✅ App ID: ${appId}`);
       console.log(`✅ App Secret: ${appSecret.substring(0, 8)}...`);
@@ -60,7 +61,7 @@ class LoginHandler {
 
     const redirectUri = `http://${host}:${port}/callback`;
     const scopeParam = scope.length > 0 ? scope.join(' ') : '';
-    
+
     // 构建授权 URL
     const authUrl = `${domain}/open-apis/authen/v1/authorize?app_id=${appId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopeParam)}`;
 
@@ -91,7 +92,7 @@ class LoginHandler {
 
             if (tokenData.code === 0) {
               const userAccessToken = tokenData.data.access_token;
-              
+
               // 保存到 .env 文件
               const envPath = path.join(process.cwd(), '.env');
               let envContent = '';
@@ -132,7 +133,7 @@ class LoginHandler {
 
               res.writeHead(200, { 'Content-Type': 'text/html' });
               res.end('<html><body><h1>✅ Login Successful!</h1><p>You can close this window now.</p></body></html>');
-              
+
               setTimeout(() => {
                 server.close();
                 process.exit(0);
@@ -194,11 +195,11 @@ program
   .action(async (options) => {
     const nodeVersion = process.version;
     const majorVersion = parseInt(nodeVersion.split('.')[0].substring(1));
-    
+
     if (majorVersion < 18) {
       console.error(
         `❌ This CLI requires Node.js >= 18. You are using ${nodeVersion}.\n\n` +
-          `👉 Please upgrade Node.js: https://nodejs.org/`
+        `👉 Please upgrade Node.js: https://nodejs.org/`
       );
       process.exit(1);
     }
@@ -221,12 +222,17 @@ program
   .option('-p, --port <port>', '(Optional) Port to listen (default: "3000")', parseInt)
   .option('--debug', '(Optional) Enable debug mode')
   .action(async (options) => {
+    const client = new lark.Client({
+      appId: options.appId,
+      appSecret: options.appSecret,
+    });
     appConfig.update({
       appId: options.appId,
       appSecret: options.appSecret,
       scope: options.scope,
       port: options.port,
-      debug: options.debug
+      debug: options.debug,
+      client: client
     });
 
     // 同步到环境变量（向下兼容）
@@ -249,7 +255,7 @@ program
 
     // 创建并启动 MCP Server
     const server = new MCPServer({
-      transport: { 
+      transport: {
         type: "stdio",
       }
     });

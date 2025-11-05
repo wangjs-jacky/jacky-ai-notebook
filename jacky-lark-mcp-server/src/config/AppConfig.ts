@@ -2,26 +2,30 @@
  * 全局应用配置管理类（单例模式）
  * 用于统一管理命令行参数和环境变量配置
  */
+
+import { lark } from "jacky-lark-api";
 export class AppConfig {
   private static instance: AppConfig;
-  
+
   // 必需配置
   public appId?: string;
   public appSecret?: string;
-  
+
   // 可选配置
   public domain: string;
   public scope?: string;
   public port: number;
   public debug: boolean;
-
+  public redirectUri: string;
+  public client: lark.Client | undefined;
   private constructor() {
     // 从环境变量加载默认值
     this.appId = process.env.LARK_APP_ID;
     this.appSecret = process.env.LARK_APP_SECRET;
     this.domain = process.env.LARK_DOMAIN || 'https://open.feishu.cn';
     this.scope = process.env.LARK_SCOPE;
-    
+    this.redirectUri = process.env.LARK_REDIRECT_URI || 'http://localhost:3000/callback';
+
     // 设置默认值
     this.port = 3000;
     this.debug = false;
@@ -46,6 +50,8 @@ export class AppConfig {
     if (options.scope !== undefined) this.scope = options.scope;
     if (options.port !== undefined) this.port = options.port;
     if (options.debug !== undefined) this.debug = options.debug;
+    if (options.redirectUri !== undefined) this.redirectUri = options.redirectUri;
+    if (options.client !== undefined) this.client = options.client;
   }
 
   /**
@@ -56,6 +62,7 @@ export class AppConfig {
     if (this.appSecret) process.env.LARK_APP_SECRET = this.appSecret;
     if (this.domain) process.env.LARK_DOMAIN = this.domain;
     if (this.scope) process.env.LARK_SCOPE = this.scope;
+    if (this.redirectUri) process.env.LARK_REDIRECT_URI = this.redirectUri;
   }
 
   /**
@@ -63,7 +70,7 @@ export class AppConfig {
    */
   public validate(): { valid: boolean; errors: string[] } {
     const errors: string[] = [];
-    
+
     if (!this.appId) {
       errors.push('❌ LARK_APP_ID is required. Use --app-id or set in .env file');
     }
@@ -87,6 +94,7 @@ export class AppConfig {
     console.log(`🔒 App Secret: ${this.appSecret ? this.appSecret.substring(0, 8) + '...' : '(not set)'}`);
     console.log(`🌐 Domain: ${this.domain}`);
     console.log(`🎫 Scope: ${this.scope || '(not set)'}`);
+    console.log(`🔗 Redirect URI: ${this.redirectUri}`);
     console.log(`🔌 Port: ${this.port}`);
     console.log(`🐛 Debug: ${this.debug ? 'Enabled' : 'Disabled'}`);
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
